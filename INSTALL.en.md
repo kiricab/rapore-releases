@@ -29,11 +29,24 @@ Double-click the DMG and drag `rapore` into your `Applications` folder.
 
 ### 3. First launch (this is where the warning appears)
 
-Double-clicking `rapore` will show:
+Double-clicking `rapore` shows a warning. The exact wording varies by macOS version:
 
+> "rapore" cannot be opened because the developer cannot be verified.
 > "rapore" can't be opened because Apple cannot check it for malicious software.
 
-Use whichever applies to your macOS version.
+### The reliable way (one Terminal command, once)
+
+**This is the most dependable route.** Open Terminal (`Applications → Utilities → Terminal`), paste the line below, and press Enter:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/rapore.app
+```
+
+Then double-click `rapore` and it will open. You only need to do this once.
+
+This removes the "downloaded from the internet" flag from the app. It does not modify rapore itself.
+
+### If you'd rather not use Terminal
 
 **macOS 15 (Sequoia) and later**
 
@@ -49,13 +62,10 @@ Use whichever applies to your macOS version.
 
 After the first time, it opens normally with a double-click.
 
-### If that doesn't work
-
-Remove the quarantine attribute from Terminal, then launch it again.
-
-```sh
-xattr -dr com.apple.quarantine /Applications/rapore.app
-```
+> **If you see "rapore is damaged and can't be opened. You should move it to the Trash."**
+>
+> The app is not damaged. The `xattr` command above will open it.
+> Note that **v0.1.0 had a bug that always produced this message. Please use v0.1.1 or later.**
 
 ---
 
