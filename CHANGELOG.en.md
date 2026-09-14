@@ -4,6 +4,23 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.2.0
+
+**Fixed: sessions could not be deleted.** Opening a session and choosing "Delete" then confirming did nothing (this affected v0.1.0 and v0.1.1).
+
+**Fixed: the Enter key that confirms Japanese IME conversion was treated as "save" or "add".** Typing a name in Japanese no longer adds the member the moment you confirm the conversion. This affected adding members, editing name and team, and entering tags.
+
+**Topics and tags now use a chip input.** Type and press Enter to turn the text into a chip, and remove it with ×. **Pasting a comma- or newline-separated list adds every item at once**, which helps when copying from another note. Topics can be reordered by dragging.
+
+**Search now has tag and period filters.** You can narrow sessions down by tag or date range without typing a keyword.
+
+**The session list is easier to scan.** The topics you covered now stand out as the heading of each entry.
+
+Known limitations (unchanged since v0.1.1)
+
+- The app is not code-signed, so your OS shows a warning the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS builds are for Apple Silicon (M1 or later) only.
+
 ## v0.1.1
 
 **Fixes the macOS build refusing to launch with "rapore is damaged and can't be opened."**
