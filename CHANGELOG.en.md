@@ -4,6 +4,25 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.3.0
+
+**You can now record “today’s read” with each 1-on-1.** Pick one of seven levels (very drained → very energized) in the session editor. Press the same one again to clear it. **This is your own impression, not a performance rating.**
+
+**Each person now has a mood trend chart.** It sits on their card, so you can see how the last session compares with earlier ones, or notice someone who has been low for a while. The chart is readable by shape and height as well as color, so it still works if colors are hard to tell apart.
+
+**You can give each person a photo.** Faces in the list make people easier to find. Drop an image onto the avatar, or click it to pick a file. You can undo a change right after making it. **Images are stored in the database on your machine and never transmitted.**
+
+**The app now keeps a copy of your data before an upgrade changes it.** When an update changes how records are stored, rapore saves a full copy of the database first (the three most recent copies are kept; older ones are removed automatically). If the copy cannot be written, the app stops instead of touching your data. This does not replace your own backups, but it does protect you from losing notes during an update.
+
+**Fixes**
+
+- A session you were still writing could appear twice in the timeline. Fixed.
+
+Known limitations (unchanged from v0.2.0)
+
+- The app is not code-signed, so your OS will warn you the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS is supported on Apple Silicon (M1 and later) only.
+
 ## v0.2.0
 
 **Fixed: sessions could not be deleted.** Opening a session and choosing "Delete" then confirming did nothing (this affected v0.1.0 and v0.1.1).

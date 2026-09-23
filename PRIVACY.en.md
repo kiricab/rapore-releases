@@ -17,7 +17,7 @@ rapore is a 1-on-1 notes app designed around one idea: **your reports' informati
 
 ## 2. Where your data is stored
 
-Everything you type — names, 1-on-1 notes, profiles, topics, tags — is stored in **a single SQLite file on your own machine**.
+Everything you type — names, 1-on-1 notes, profiles, topics, tags, **today’s read (the seven-level entry)**, **member photos**, and images you paste into your notes — is stored in **a single SQLite file on your own machine**. Images live inside that same file, so nothing is written to an outside folder or server.
 
 | OS | Location |
 |---|---|
@@ -45,6 +45,8 @@ To back up, use **Settings → Backup → "Create a backup (.db)"** in the app. 
 For the same reason, putting the database file **directly** into a Dropbox / iCloud Drive / OneDrive folder can corrupt it. Put a copy written by the app there instead (the automatic backup feature writes a consistent snapshot to a folder you choose).
 
 Note that a backup written into a sync folder then falls under that cloud service's privacy policy. **At that point your data does leave your machine.** That decision is yours to make.
+
+Also, **when an update changes how records are stored, the app automatically saves a copy before migrating** (named `rapore-pre-v<version>-<timestamp>.db`, next to your database; the three most recent are kept and older ones are removed automatically). These copies stay on your machine and are never transmitted.
 
 ## 6. Getting your data out
 

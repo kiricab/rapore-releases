@@ -28,8 +28,10 @@ Get the latest build from **[Releases](../../releases/latest)**.
 - **Manage your reports** — add, edit, archive, or delete permanently
 - **Record 1-on-1s** — date, notes (Markdown / WYSIWYG), topics, tags
 - **Find past sessions fast** — a per-person timeline plus keyword search across everyone (notes, topics, tags)
+- **Today’s read** — record how someone seemed to you on a seven-level scale after each 1-on-1, and see the trend per person (it is your impression, not a performance rating)
+- **Member photos** — give each person a photo so the list is easier to scan (images are stored on your machine too)
 - **Member dashboard** — four profile fields (values & motivation / career direction & goals / strengths, working & communication style / personal context) shown next to the history
-- **Stored locally** — SQLite on your machine. The exact path is shown in Settings. Nothing is transmitted
+- **Stored locally** — SQLite on your machine. The exact path is shown in Settings. Nothing is transmitted. **Before an update changes how records are stored, the app saves a full copy first** (the three most recent are kept)
 - **English and Japanese** — follows your OS locale by default, switchable in Settings
 
 ## Screens
