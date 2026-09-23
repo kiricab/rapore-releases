@@ -4,6 +4,23 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.3.2
+
+**Editing a past session now changes only the part you clicked.** Clicking the date or a topic used to swap the whole card into an editor, turning the notes you were reading into an input box. Now the date, topics, tags and notes are each edited in place, with the cursor already in the field you pressed.
+
+**Clicking a topic or tag no longer collapses the card.** Previously, pressing a topic on an open card folded it away and the notes you were reading disappeared. To collapse a card, use the chevron on the right or click the empty part of its heading.
+
+**You can see and change “today’s read” from the heading of an open session.** The level now appears as a word — “Energized”, “A bit spent” — instead of only a colored band, and pressing it lets you pick a different one. Sessions without a read show “+ Read”.
+
+**Deleting a session has moved to the “⋯” menu.** Open the session and use “⋯” at the top right (the confirmation step is unchanged).
+
+Everything you have recorded carries over untouched.
+
+Known limitations (unchanged from v0.2.0)
+
+- The app is not code-signed, so your OS shows a warning the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS support is Apple Silicon (M1 and later) only.
+
 ## v0.3.1
 
 **Fixed the “today’s read” picker wrapping onto a second line in English.** The last of the seven levels dropped to its own row, so the levels no longer read as one scale — and widening the window did not help. The level names are now shorter words (`Very spent` to `Very lively`). **Japanese is unchanged.**
