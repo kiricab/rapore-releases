@@ -4,6 +4,17 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.3.1
+
+**Fixed the “today’s read” picker wrapping onto a second line in English.** The last of the seven levels dropped to its own row, so the levels no longer read as one scale — and widening the window did not help. The level names are now shorter words (`Very spent` to `Very lively`). **Japanese is unchanged.**
+
+Everything you have recorded carries over untouched.
+
+Known limitations (unchanged from v0.2.0)
+
+- The app is not code-signed, so your OS shows a warning the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS support is Apple Silicon (M1 and later) only.
+
 ## v0.3.0
 
 **You can now record “today’s read” with each 1-on-1.** Pick one of seven levels (very drained → very energized) in the session editor. Press the same one again to clear it. **This is your own impression, not a performance rating.**
