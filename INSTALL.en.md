@@ -92,6 +92,40 @@ Follow the installer. When it finishes, `rapore` is added to your Start menu.
 
 ---
 
+## Using it from your AI (optional, off by default)
+
+You can have a generative AI you pay for yourself (Claude Desktop, Claude Code, Cursor, Codex CLI, and so on) create and read your 1-on-1 records. **This is off by default, and the route does not exist until you turn it on.**
+
+> ⚠️ **Know this first.** rapore itself sends nothing, but **whatever records you let the AI read go to that AI's provider (Anthropic, OpenAI, and so on).** How they handle it falls under their privacy policy and is outside rapore's control. See ["4. Letting your own AI work with rapore"](./PRIVACY.en.md) for the details.
+
+### Which AI works
+
+You need a client that **runs on your own machine**.
+
+| Works | Does not work |
+|---|---|
+| Claude Desktop / Claude Code / Cursor / Codex CLI, and similar | ChatGPT connectors, Codex cloud tasks, and anything else **running in the cloud** |
+
+Cloud-run AI cannot reach a route that exists only inside your machine — which is the flip side of not putting your data anywhere else.
+
+### Steps
+
+1. Open **Settings → AI access** in rapore.
+2. Turn on "Enable AI access". A confirmation screen appears; read it and choose "Enable".
+3. If you also want the AI to read the **body** of your records, turn on "Also allow reading" as well (**a separate consent**. Left off, the AI can only create and edit records and read member names, roles and teams).
+4. Pick your client under "Client" and rapore shows you **which file to paste into** and **what to paste**. Paste it into that configuration file as-is.
+5. Restart your AI client.
+
+> The paths and the shared secret are shown already filled in for your machine. **Do not retype them by hand** — the quoting rules differ per format, so a transcription slip means it will not connect.
+
+### If it does not work
+
+- Your AI says rapore is not running or AI access is off → start rapore and check the setting. Once rapore is running you do not need to restart your AI client.
+- Settings says "Not listening" → restart rapore.
+- You moved rapore somewhere else → what you paste changes. Copy it again from Settings.
+
+---
+
 ## Uninstalling, and where your data lives
 
 Removing the app leaves your data in place. To delete the data as well, remove the folder below.
@@ -117,4 +151,26 @@ Removing the app leaves your data in place. To delete the data as well, remove t
 
 ## Updating
 
-There is no automatic update yet. Download the newer version from [Releases](../../releases/latest) and install it over the top the same way. **Your data is kept** — it lives separately from the app itself.
+There are three ways to find out that a new version is out. Pick whichever suits you.
+
+### 1. Let the app tell you (off by default)
+
+**Only if you turn it on**, rapore asks GitHub for the latest version number at startup and tells you inside the app when a newer one is out. It asks you once, on first launch, whether you want this. You can change your mind any time under **Settings → General → "Tell me about new versions"**.
+
+**It is off by default — the app makes no connection at all.** Even when it is on, the only thing requested is the latest version number: **none of your notes, your reports' details, or your usage is ever sent** (see the [Privacy Policy](./PRIVACY.en.md)).
+
+### 2. Get notified by GitHub (needs a GitHub account)
+
+On the [releases repository](../../), use **Watch → Custom → Releases** at the top right. GitHub then emails you when a new version ships.
+
+### 3. Subscribe to the feed (no account needed)
+
+Add this URL to any RSS / Atom reader:
+
+```
+https://github.com/kiricab/rapore-releases/releases.atom
+```
+
+### How to update
+
+Download the newer version from [Releases](../../releases/latest) and install it over the top, the same way you installed it the first time. **Your data is kept** — it lives separately from the app itself. The app never downloads an update or replaces itself.

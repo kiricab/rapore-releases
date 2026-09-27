@@ -27,12 +27,14 @@ Get the latest build from **[Releases](../../releases/latest)**.
 
 - **Manage your reports** — add, edit, archive, or delete permanently
 - **Record 1-on-1s** — date, notes (Markdown / WYSIWYG), topics, tags
-- **Find past sessions fast** — a per-person timeline plus keyword search across everyone (notes, topics, tags)
+- **Find past sessions fast** — a per-person timeline plus keyword search across everyone (notes, topics, tags), narrowed by person, tag, or date range
 - **Today’s read** — record how someone seemed to you on a seven-level scale after each 1-on-1, and see the trend per person (it is your impression, not a performance rating)
 - **Member photos** — give each person a photo so the list is easier to scan (images are stored on your machine too)
 - **Member dashboard** — four profile fields (values & motivation / career direction & goals / strengths, working & communication style / personal context) shown next to the history
 - **Stored locally** — SQLite on your machine. The exact path is shown in Settings. Nothing is transmitted. **Before an update changes how records are stored, the app saves a full copy first** (the three most recent are kept)
 - **English and Japanese** — follows your OS locale by default, switchable in Settings
+- **AI access (optional, off by default)** — let the AI you already use (Claude Desktop, Claude Code, Cursor, Codex CLI, and so on) add and read your 1-on-1 records. Copy the snippet from Settings and paste it into your AI client. **Whatever your AI reads goes to that AI's provider** (see [INSTALL.en.md](./INSTALL.en.md) / [PRIVACY.en.md](./PRIVACY.en.md))
+- **New-version notice (optional, off by default)** — when turned on, the app tells you when a new version is out. It asks only for the latest version number
 
 ## Screens
 
@@ -47,11 +49,11 @@ Get the latest build from **[Releases](../../releases/latest)**.
 
 - macOS 12 or later (**Apple Silicon only. Intel Macs are not supported**)
 - Windows 10 / 11 (64-bit)
-- No internet connection required
+- No internet connection required (used only if you turn on the new-version notice)
 
 ## Your data
 
-- Everything is stored in a SQLite file on your machine and is never transmitted. See **[PRIVACY.en.md](./PRIVACY.en.md)**.
+- Everything is stored in a SQLite file on your machine and is never transmitted. With AI access turned on, rapore itself still sends nothing, but whatever your AI reads goes to that AI's provider. See **[PRIVACY.en.md](./PRIVACY.en.md)**.
 - Session notes and profile fields are stored as **plain Markdown strings**, so you can always get them out. This is deliberate — we don't want to lock your data in.
 - To back up, use **Settings → Backup → "Create a backup (.db)"**. **Copying the database file by hand is not recommended** — WAL mode means your most recent sessions may live in a separate file and would be missed. See [INSTALL.en.md](./INSTALL.en.md).
 - ⚠️ Putting the database file **directly** into a Dropbox / iCloud / OneDrive folder can corrupt it for the same reason. Put a copy written by the app there instead.
