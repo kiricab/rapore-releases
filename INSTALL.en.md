@@ -2,7 +2,7 @@
 
 [日本語](./INSTALL.md) | **English**
 
-> **Please read this first.** rapore is **not code-signed** yet, so macOS and Windows will tell you the developer cannot be verified the first time you open it. This is not a sign that something is wrong with rapore — it's because a solo developer has not yet paid for a signing certificate (Apple: $99/year; Windows: a few hundred dollars a year). The steps below get you through it. We'll revisit signing based on how the app is used.
+> **Please read this first.** **The macOS version is notarized by Apple**, so you can download it and open it as is. **The Windows version is not code-signed yet**, so Windows will show a "Windows protected your PC" warning the first time you open it. This is not a sign that something is wrong with rapore — it's because a solo developer has not yet paid for a Windows signing certificate. The steps below get you through it.
 
 ---
 
@@ -27,45 +27,17 @@ Download `rapore-<version>-arm64.dmg`.
 
 Double-click the DMG and drag `rapore` into your `Applications` folder.
 
-### 3. First launch (this is where the warning appears)
+### 3. First launch
 
-Double-clicking `rapore` shows a warning. The exact wording varies by macOS version:
+The first time you double-click `rapore`, macOS asks for confirmation:
 
-> "rapore" cannot be opened because the developer cannot be verified.
-> "rapore" can't be opened because Apple cannot check it for malicious software.
+> "rapore" is an app downloaded from the Internet. Are you sure you want to open it?
 
-### The reliable way (one Terminal command, once)
+Click **Open** and rapore starts. After that, it opens normally with a double-click.
 
-**This is the most dependable route.** Open Terminal (`Applications → Utilities → Terminal`), paste the line below, and press Enter:
+rapore is notarized by Apple, so you don't need Terminal or any changes in System Settings.
 
-```sh
-xattr -dr com.apple.quarantine /Applications/rapore.app
-```
-
-Then double-click `rapore` and it will open. You only need to do this once.
-
-This removes the "downloaded from the internet" flag from the app. It does not modify rapore itself.
-
-### If you'd rather not use Terminal
-
-**macOS 15 (Sequoia) and later**
-
-1. Dismiss the dialog with "Done" or "OK"
-2. Open **System Settings → Privacy & Security**
-3. Scroll down to the message about "rapore" being blocked and click **"Open Anyway"**
-4. Confirm with your administrator password or Touch ID
-
-**macOS 14 (Sonoma) and earlier**
-
-1. **Right-click (or control-click) `rapore`** in your `Applications` folder and choose **Open**
-2. Click **Open** in the dialog that appears
-
-After the first time, it opens normally with a double-click.
-
-> **If you see "rapore is damaged and can't be opened. You should move it to the Trash."**
->
-> The app is not damaged. The `xattr` command above will open it.
-> Note that **v0.1.0 had a bug that always produced this message. Please use v0.1.1 or later.**
+> **If you used v0.4.0 or earlier**: earlier versions were not code-signed, and you had to open them with a Terminal command (`xattr`) or similar. Versions after v0.4.0 don't need that.
 
 ---
 

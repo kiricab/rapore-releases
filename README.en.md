@@ -21,7 +21,7 @@ Get the latest build from **[Releases](../../releases/latest)**.
 | macOS (Apple Silicon / M1 and later) | `rapore-<version>-arm64.dmg` |
 | Windows 10 / 11 (64-bit) | `rapore-Setup-<version>-x64.exe` |
 
-> ⚠️ This app is **not code-signed** yet, so macOS and Windows will warn you the first time you open it. Please read **[INSTALL.en.md](./INSTALL.en.md)** before installing.
+> ⚠️ **The Windows version is not code-signed yet**, so Windows will warn you the first time you open it. Please read **[INSTALL.en.md](./INSTALL.en.md)** before installing (the macOS version is notarized by Apple and opens as is).
 
 ## What it does
 

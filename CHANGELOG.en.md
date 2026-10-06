@@ -4,6 +4,18 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.4.1
+
+**The macOS version is now notarized by Apple.** The first time you open a downloaded copy of rapore, you no longer need the Terminal command (`xattr`) or a trip to System Settings. macOS just asks “"rapore" is an app downloaded from the Internet. Are you sure you want to open it?” — click **Open** and it starts.
+
+There are no changes to the app's features. Everything you have recorded carries over untouched.
+
+Known limitations
+
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
+
 ## v0.4.0
 
 **The AI you already use can now work with your rapore records (AI access, off by default).** From an AI client that runs on your machine — Claude Desktop, Claude Code, Cursor, Codex CLI, and so on — you can save what was said in a 1-on-1 as a record, or have it read past sessions and suggest topics for the next one. No more copy-and-paste back and forth. Turn it on under **Settings → AI access**, then use the “Copy” button to paste the snippet shown into your AI client. Steps are in [INSTALL.en.md](./INSTALL.en.md).

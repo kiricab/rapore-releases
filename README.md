@@ -21,7 +21,7 @@
 | macOS（Apple Silicon / M1 以降） | `rapore-<version>-arm64.dmg` |
 | Windows 10 / 11（64bit） | `rapore-Setup-<version>-x64.exe` |
 
-> ⚠️ 現在このアプリは**コード署名を行っていません**。初回起動時に macOS / Windows の警告が出ます。開き方は **[INSTALL.md](./INSTALL.md)** を必ずお読みください。
+> ⚠️ **Windows 版はまだコード署名を行っていません**。初回起動時に Windows の警告が出ます。開き方は **[INSTALL.md](./INSTALL.md)** をお読みください（macOS 版は Apple の公証済みで、そのまま開けます）。
 
 ## 主な機能
 
