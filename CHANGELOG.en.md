@@ -4,6 +4,18 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.5.1
+
+**Fixed a bug where the save status ("Unsaved…" / "Saved") on a member's page stayed on screen.** After you finished editing a profile field, "Unsaved…" could keep showing even though your changes had in fact been saved (nothing you recorded was lost). "Saved" now disappears after a few seconds, and in the left panel it appears below **« Collapse** instead of next to the name, team, and role, so it no longer hides the member's name. If a save fails, that message still stays until you notice it.
+
+Everything you have recorded carries over untouched.
+
+Known limitations
+
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
+
 ## v0.5.0
 
 **The member list is now a grid of cards.** Each member gets a card with a large icon, and the cards fill the width of the window. If you prefer the previous one-row-per-member layout, choose **List view** with the toggle above the list. rapore remembers your choice the next time you open it.
