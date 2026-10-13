@@ -4,6 +4,22 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.5.0
+
+**The member list is now a grid of cards.** Each member gets a card with a large icon, and the cards fill the width of the window. If you prefer the previous one-row-per-member layout, choose **List view** with the toggle above the list. rapore remembers your choice the next time you open it.
+
+**You can now read and edit a profile in a wider view.** On a member's page, click **Expand** above the profile (Values & motivation / Career direction & goals / Strengths, working & communication style / Personal context) to open all four fields side by side in two columns. Long entries that were hard to read in the narrow left panel are easy to take in, and you can edit them right there (changes are saved automatically). The member's icon, name, and mood trend are shown alongside.
+
+**Fixed a bug where clicking another profile field while editing one sometimes failed to open it.**
+
+Everything you have recorded carries over untouched.
+
+Known limitations
+
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
+
 ## v0.4.1
 
 **The macOS version is now notarized by Apple.** The first time you open a downloaded copy of rapore, you no longer need the Terminal command (`xattr`) or a trip to System Settings. macOS just asks “"rapore" is an app downloaded from the Internet. Are you sure you want to open it?” — click **Open** and it starts.
