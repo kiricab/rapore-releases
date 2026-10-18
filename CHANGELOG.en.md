@@ -4,6 +4,20 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.5.2
+
+**Fixed a bug where the new-version notice did not appear while rapore was left open.** Even with "Tell me about new versions" turned on, rapore used to check only when it started, so if you kept it running without quitting, the notice could stay away for days. Now it lets you know as soon as the daily check is due, even while rapore stays open. rapore still contacts the internet for this at most once a day.
+
+If you are on v0.5.1 or earlier and have not seen the notice yet, quit rapore and open it again to trigger the check.
+
+Everything you have recorded carries over untouched.
+
+Known limitations
+
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
+
 ## v0.5.1
 
 **Fixed a bug where the save status ("Unsaved…" / "Saved") on a member's page stayed on screen.** After you finished editing a profile field, "Unsaved…" could keep showing even though your changes had in fact been saved (nothing you recorded was lost). "Saved" now disappears after a few seconds, and in the left panel it appears below **« Collapse** instead of next to the name, team, and role, so it no longer hides the member's name. If a save fails, that message still stays until you notice it.
