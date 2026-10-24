@@ -47,7 +47,7 @@ Get the latest build from **[Releases](../../releases/latest)**.
 
 ## Requirements
 
-- macOS 12 or later (**Apple Silicon only. Intel Macs are not supported**)
+- macOS 13 Ventura or later (**Apple Silicon only. Intel Macs are not supported**)
 - Windows 10 / 11 (64-bit)
 - No internet connection required (used only if you turn on the new-version notice)
 

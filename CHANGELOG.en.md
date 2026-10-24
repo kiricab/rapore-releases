@@ -4,6 +4,29 @@
 
 Only changes that are visible to you are listed here.
 
+## v0.6.0
+
+**rapore now requires macOS 13 Ventura or later.** We moved the app's foundation (Electron) to a newer version that still receives security fixes. **v0.6.0 will not open on macOS 12 Monterey or earlier.** To check your version, choose Apple menu → "About This Mac". If you are on 12 or earlier, update macOS first, or keep using v0.5.2 until you can (your records stay where they are).
+
+**Filtering search by tag now stays easy to use as your tags grow.**
+
+- Only your 12 most-used tags are shown at first; open the rest with "Show all".
+- When you have many tags, type in "Find a tag" to narrow them down on the spot. Press Enter to keep picking more.
+- The tags you pick are gathered right below the heading, and picking several now says "matches any" so it is clear what you will get.
+- Tags that no session uses any more (which would always return nothing) are no longer shown.
+- The filters are now ordered person → period → tag.
+
+Also fixed: after deleting a session or a person, the tag list could stay out of date.
+
+Everything you have recorded carries over untouched.
+
+Known limitations
+
+- **macOS 13 Ventura or later is required** (as of v0.6.0).
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.en.md](./INSTALL.en.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
+
 ## v0.5.2
 
 **Fixed a bug where the new-version notice did not appear while rapore was left open.** Even with "Tell me about new versions" turned on, rapore used to check only when it started, so if you kept it running without quitting, the notice could stay away for days. Now it lets you know as soon as the daily check is due, even while rapore stays open. rapore still contacts the internet for this at most once a day.

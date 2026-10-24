@@ -10,12 +10,14 @@
 
 ### 0. 対応している Mac の確認
 
-**rapore は Apple Silicon 搭載の Mac（M1 / M2 / M3 / M4 …）専用です。Intel 搭載の Mac には対応していません。**
+**rapore は Apple Silicon 搭載の Mac（M1 / M2 / M3 / M4 …）専用です。Intel 搭載の Mac には対応していません。** また **macOS 13 Ventura 以降**が必要です。
 
 「アップルメニュー →  このマックについて」の「チップ」欄をご覧ください。
 
 - **Apple M1 / M2 / M3 / M4 …** と表示される → 対応しています。次へ進んでください
 - **Intel Core …** と表示される → 申し訳ありませんが、現在ご利用いただけません
+
+同じ画面の上部に macOS の名前とバージョンが出ます。**13（Ventura）より前**（12 Monterey・11 Big Sur）の場合は、先に「システム設定 → 一般 → ソフトウェアアップデート」から macOS を更新してください。
 
 Intel Mac 向けの版はありません（Rosetta でも動きません。Rosetta は Intel 用アプリを Apple Silicon で動かす仕組みで、その逆はできないためです）。
 

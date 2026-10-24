@@ -47,7 +47,7 @@
 
 ## 動作環境
 
-- macOS 12 以降（**Apple Silicon 搭載機のみ。Intel Mac には対応していません**）
+- macOS 13 Ventura 以降（**Apple Silicon 搭載機のみ。Intel Mac には対応していません**）
 - Windows 10 / 11（64bit）
 - インターネット接続は不要です（「新しいバージョンのお知らせ」を有効にした場合のみ使います）
 

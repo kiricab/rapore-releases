@@ -10,12 +10,14 @@
 
 ### 0. Check your Mac
 
-**rapore requires a Mac with Apple Silicon (M1 / M2 / M3 / M4 …). Intel Macs are not supported.**
+**rapore requires a Mac with Apple Silicon (M1 / M2 / M3 / M4 …). Intel Macs are not supported.** It also requires **macOS 13 Ventura or later**.
 
 Open  menu → About This Mac and look at the "Chip" line.
 
 - It says **Apple M1 / M2 / M3 / M4 …** → you're good, continue below
 - It says **Intel Core …** → sorry, rapore won't run on this machine
+
+The macOS name and version appear at the top of the same window. If it's **older than 13 (Ventura)** — 12 Monterey or 11 Big Sur — update macOS first from System Settings → General → Software Update.
 
 There is no Intel build. Rosetta doesn't help either: Rosetta runs Intel apps on Apple Silicon, not the other way around.
 
