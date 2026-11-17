@@ -1,201 +1,231 @@
-# 変更履歴
+# Release notes
 
-**日本語** | [English](./CHANGELOG.en.md)
+**English** | [日本語](./CHANGELOG.ja.md)
 
-利用者から見える変更のみを記載しています。
+Only changes that are visible to you are listed here.
+
+## v0.7.0
+
+**You can now choose how headings look in your notes.** In Settings → General, "Note style" offers two choices, with a preview right below it:
+
+- **Standard** (default): the same look as before.
+- **Emphasized headings**: heading 1 gets a bold underline and heading 2 a bar on its left, so heading levels are easy to tell apart. Text sizes stay the same as Standard.
+
+The style applies to session notes and the four profile fields, both while reading and while editing.
+
+**Fixed the hint text in the editor.**
+
+- When you turned a line into a heading (for example by typing `# `), the field's hint showed at heading size, wrapped onto several lines, and could run past the right edge. The hint now appears only while the field is empty, and an empty heading simply shows "Heading 1", "Heading 2", and so on.
+- Typing seven or more `#` in a row created a heading level that does not exist, which made the hint stack vertically and made Backspace seem to stop working. It now becomes heading 6.
+
+**Privacy policy updated** ([PRIVACY.md](./PRIVACY.md)). What rapore stores and sends has not changed.
+
+- Section 5 (encryption): rapore will keep relying on your computer's disk encryption (FileVault / BitLocker) instead of encrypting the database itself, and the policy now explains why: if an app-level key were lost, no one, including us, could recover your records. The earlier note that at-rest encryption was on the roadmap has been removed.
+- Section 12 (new): the Japanese version is the governing text; the English version is a reference translation.
+
+The documents in this repository (README, installation guide, privacy policy, license, release notes) now open in English by default. The Japanese versions are the `*.ja.md` files.
+
+Everything you have recorded carries over untouched.
+
+Known limitations
+
+- **macOS 13 Ventura or later is required** (as of v0.6.0).
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
 
 ## v0.6.0
 
-**動作に必要な macOS が 13 Ventura 以降になりました。** アプリの土台（Electron）を、セキュリティ修正が届く新しい版に上げたためです。**macOS 12 Monterey 以前では v0.6.0 を起動できません。** お使いの Mac のバージョンは、画面左上のアップルメニュー →「この Mac について」で確認できます。12 以前の場合は、先に macOS を更新するか、更新できるまで v0.5.2 をそのままお使いください（記録はそのまま残ります）。
+**rapore now requires macOS 13 Ventura or later.** We moved the app's foundation (Electron) to a newer version that still receives security fixes. **v0.6.0 will not open on macOS 12 Monterey or earlier.** To check your version, choose Apple menu → "About This Mac". If you are on 12 or earlier, update macOS first, or keep using v0.5.2 until you can (your records stay where they are).
 
-**検索のタグの絞り込みを、タグが増えても使いやすくしました。**
+**Filtering search by tag now stays easy to use as your tags grow.**
 
-- よく使うタグから順に12件だけを表示し、残りは「すべて表示」で開けるようにしました。
-- タグが多いときは「タグを探す」欄に入力すると、その場で絞り込めます。Enter で続けて複数選べます。
-- 選んだタグは見出しのすぐ下にまとめて表示します。複数選ぶと「いずれかを含む」記録が出ることも明記しました。
-- どの記録にも使われていないタグ（押しても1件も出ないもの）は表示しないようにしました。
-- 絞り込みの並びを「メンバー → 期間 → タグ」に変えました。
+- Only your 12 most-used tags are shown at first; open the rest with "Show all".
+- When you have many tags, type in "Find a tag" to narrow them down on the spot. Press Enter to keep picking more.
+- The tags you pick are gathered right below the heading, and picking several now says "matches any" so it is clear what you will get.
+- Tags that no session uses any more (which would always return nothing) are no longer shown.
+- The filters are now ordered person → period → tag.
 
-あわせて、記録やメンバーを削除したあとにタグの一覧が古いまま残ることがあったのを直しました。
+Also fixed: after deleting a session or a person, the tag list could stay out of date.
 
-記録したデータはそのまま引き継がれます。
+Everything you have recorded carries over untouched.
 
-既知の制限
+Known limitations
 
-- **macOS 13 Ventura 以降が必要です**（v0.6.0 から）。
-- **Windows 版はまだコード署名を行っていない**ため、初回起動時に Windows の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
-- **Windows での AI連携は、まだ実機で動作を確認できていません。** うまく動かない場合は [Issues](../../issues) でお知らせください。
+- **macOS 13 Ventura or later is required** (as of v0.6.0).
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
 
 ## v0.5.2
 
-**rapore を開いたままにしていると、新しいバージョンのお知らせが出ない不具合を直しました。** 「新しいバージョンをお知らせする」を有効にしていても、これまでは起動したときにしか確認しておらず、終了せずに使い続けていると何日たってもお知らせが出ないことがありました。これからは開いたままでも、1日1回の確認の時刻が来れば知らせます。インターネットへの問い合わせが1日1回までであることは変わりません。
+**Fixed a bug where the new-version notice did not appear while rapore was left open.** Even with "Tell me about new versions" turned on, rapore used to check only when it started, so if you kept it running without quitting, the notice could stay away for days. Now it lets you know as soon as the daily check is due, even while rapore stays open. rapore still contacts the internet for this at most once a day.
 
-v0.5.1 以前をお使いで、まだお知らせが出ていない場合は、rapore を一度終了してから起動し直すと確認されます。
+If you are on v0.5.1 or earlier and have not seen the notice yet, quit rapore and open it again to trigger the check.
 
-記録したデータはそのまま引き継がれます。
+Everything you have recorded carries over untouched.
 
-既知の制限
+Known limitations
 
-- **Windows 版はまだコード署名を行っていない**ため、初回起動時に Windows の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
-- **Windows での AI連携は、まだ実機で動作を確認できていません。** うまく動かない場合は [Issues](../../issues) でお知らせください。
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
 
 ## v0.5.1
 
-**メンバーの画面で、保存の状態（「未保存…」「保存しました」）が表示されたまま消えない不具合を直しました。** プロフィールの項目を書いて閉じたあとも「未保存…」と出続けることがありましたが、実際には保存されていました（記録した内容が失われたことはありません）。あわせて「保存しました」は数秒で消えるようにし、左の欄では氏名・チーム・役職の横ではなく「折りたたむ」の下に出すようにしました。保存の表示で名前が隠れることはなくなります。保存に失敗したときの表示は、これまでどおり消えずに残ります。
+**Fixed a bug where the save status ("Unsaved…" / "Saved") on a member's page stayed on screen.** After you finished editing a profile field, "Unsaved…" could keep showing even though your changes had in fact been saved (nothing you recorded was lost). "Saved" now disappears after a few seconds, and in the left panel it appears below **« Collapse** instead of next to the name, team, and role, so it no longer hides the member's name. If a save fails, that message still stays until you notice it.
 
-記録したデータはそのまま引き継がれます。
+Everything you have recorded carries over untouched.
 
-既知の制限
+Known limitations
 
-- **Windows 版はまだコード署名を行っていない**ため、初回起動時に Windows の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
-- **Windows での AI連携は、まだ実機で動作を確認できていません。** うまく動かない場合は [Issues](../../issues) でお知らせください。
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
 
 ## v0.5.0
 
-**メンバー一覧がカードの並びになりました。** アイコンを大きく出したカードを、画面の幅に合わせて並べます。これまでどおりの1行ずつの表示がよければ、一覧の上の切り替えで **リスト表示** を選んでください。選んだ表示は次に開いたときも保たれます。
+**The member list is now a grid of cards.** Each member gets a card with a large icon, and the cards fill the width of the window. If you prefer the previous one-row-per-member layout, choose **List view** with the toggle above the list. rapore remembers your choice the next time you open it.
 
-**プロフィールを広い画面で読み書きできるようになりました。** メンバーの画面で、プロフィール（価値観・モチベーション／キャリア志向・目標／強み・働き方・コミュ傾向／個人的コンテキスト）の上にある **「広げて表示」** を押すと、4項目を2列に並べた大きな画面で開きます。左の欄では読みづらかった長い内容も見渡せ、そのまま書き換えることもできます（保存は自動です）。アイコン・氏名・様子の推移も一緒に表示されます。
+**You can now read and edit a profile in a wider view.** On a member's page, click **Expand** above the profile (Values & motivation / Career direction & goals / Strengths, working & communication style / Personal context) to open all four fields side by side in two columns. Long entries that were hard to read in the narrow left panel are easy to take in, and you can edit them right there (changes are saved automatically). The member's icon, name, and mood trend are shown alongside.
 
-**プロフィールの項目を書いている途中で別の項目を押しても、そちらが開かないことがある不具合を直しました。**
+**Fixed a bug where clicking another profile field while editing one sometimes failed to open it.**
 
-記録したデータはそのまま引き継がれます。
+Everything you have recorded carries over untouched.
 
-既知の制限
+Known limitations
 
-- **Windows 版はまだコード署名を行っていない**ため、初回起動時に Windows の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
-- **Windows での AI連携は、まだ実機で動作を確認できていません。** うまく動かない場合は [Issues](../../issues) でお知らせください。
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
 
 ## v0.4.1
 
-**macOS 版が Apple の公証（notarization）を受けた状態で配布されるようになりました。** ダウンロードした rapore を初めて開くとき、これまで必要だったターミナルのコマンド（`xattr`）やシステム設定での許可は要りません。「インターネットからダウンロードされたアプリケーションです。開いてもよろしいですか？」の確認で **「開く」** を押すだけで起動します。
+**The macOS version is now notarized by Apple.** The first time you open a downloaded copy of rapore, you no longer need the Terminal command (`xattr`) or a trip to System Settings. macOS just asks “"rapore" is an app downloaded from the Internet. Are you sure you want to open it?” — click **Open** and it starts.
 
-アプリの機能に変更はありません。記録したデータはそのまま引き継がれます。
+There are no changes to the app's features. Everything you have recorded carries over untouched.
 
-既知の制限
+Known limitations
 
-- **Windows 版はまだコード署名を行っていない**ため、初回起動時に Windows の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
-- **Windows での AI連携は、まだ実機で動作を確認できていません。** うまく動かない場合は [Issues](../../issues) でお知らせください。
+- **The Windows version is not code-signed yet**, so Windows shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
 
 ## v0.4.0
 
-**あなたが使っている生成AIから、rapore の記録を扱えるようになりました（AI連携・既定はオフ）。** Claude Desktop・Claude Code・Cursor・Codex CLI など、あなたの端末で動く AI クライアントから、1on1 の内容を記録として登録したり、前回までの記録を読ませて次回の論点を考えさせたりできます。これまでコピー＆ペーストでしていた往復が要らなくなります。**設定 → AI連携** で有効にし、表示された設定を「コピー」ボタンで AI クライアントに貼り付けてください。手順は [INSTALL.md](./INSTALL.md) にあります。
+**The AI you already use can now work with your rapore records (AI access, off by default).** From an AI client that runs on your machine — Claude Desktop, Claude Code, Cursor, Codex CLI, and so on — you can save what was said in a 1-on-1 as a record, or have it read past sessions and suggest topics for the next one. No more copy-and-paste back and forth. Turn it on under **Settings → AI access**, then use the “Copy” button to paste the snippet shown into your AI client. Steps are in [INSTALL.md](./INSTALL.md).
 
-- **既定はオフです。** 有効にするまで、この経路そのものが存在しません。
-- 許可は2段階です。有効にしただけでは、AI ができるのは記録の登録・編集と、メンバーの名前・役割・チームの参照までです。記録の**本文**を読ませるには「参照も許可する」を別にオンにします。
-- **rapore 自身は何も送信しません**が、**AI に読ませた記録の内容は、その AI の提供元（Anthropic・OpenAI など）に渡ります。** 詳しくは [PRIVACY.md](./PRIVACY.md) の「4.」をお読みください。
-- ChatGPT のコネクタなど、クラウドで動く AI からは使えません。
+- **It is off by default.** Until you turn it on, the route does not exist at all.
+- Permission comes in two steps. Turning it on only lets the AI create and edit records and read member names, roles and teams. To let it read record **bodies**, turn on “Also allow reading” separately.
+- **rapore itself sends nothing**, but **whatever records your AI reads go to that AI’s provider (Anthropic, OpenAI, and so on).** See section 4 of [PRIVACY.md](./PRIVACY.md).
+- AI that runs in the cloud, such as ChatGPT connectors, cannot use it.
 
-**新しいバージョンが出たら、アプリ内でお知らせできるようになりました（既定はオフ）。** 初回起動時に一度だけ「お知らせしますか？」と尋ねます。有効にすると、1日1回まで最新バージョンの番号だけを確認します。あなたの記録やメンバーの情報が送られることはありません。あとから **設定 → 一般** で切り替えられます。
+**The app can now tell you when a new version is out (off by default).** It asks you once, on first launch. When turned on, it checks only the latest version number, at most once a day — none of your records or your reports’ details are sent. You can switch it under **Settings → General** at any time.
 
-**横断検索で、メンバーを指定して絞り込めるようになりました。** 絞り込み（メンバー・タグ・期間）は結果の左の列にまとめ、検索結果が画面の上のほうから見えるようにしました。アーカイブ済みのメンバーも選べます。
+**Search can now be narrowed to one person.** The filters (person, tag, date range) now sit in a column to the left of the results, so the results start near the top of the screen. Archived members can be picked too.
 
-**rapore を2つ同時に起動できないようにしました。** すでに起動しているときにもう一度開くと、開いているウィンドウが前面に出ます。
+**rapore no longer runs twice at once.** Opening it again while it is already running brings the existing window to the front.
 
-記録したデータはそのまま引き継がれます。
+Everything you have recorded carries over untouched.
 
-既知の制限
+Known limitations
 
-- コード署名を行っていないため、初回起動時に OS の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
-- **Windows での AI連携は、まだ実機で動作を確認できていません。** うまく動かない場合は [Issues](../../issues) でお知らせください。
+- The app is not code-signed, so your OS shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
+- **AI access has not yet been verified on a real Windows machine.** If it does not work for you, please let us know in [Issues](../../issues).
 
 ## v0.3.2
 
-**過去の記録を直すとき、クリックした部分だけが編集できるようになりました。** これまでは面談日やトピックを押すとカードが丸ごと編集画面に切り替わり、読んでいた本文まで入力欄に変わっていました。いまは面談日・トピック・タグ・本文のうち**押したところだけ**がその場で書き換えられ、カーソルもそこに入ります。
+**Editing a past session now changes only the part you clicked.** Clicking the date or a topic used to swap the whole card into an editor, turning the notes you were reading into an input box. Now the date, topics, tags and notes are each edited in place, with the cursor already in the field you pressed.
 
-**トピックやタグを押しても、カードが畳まれなくなりました。** 以前は開いた状態でトピックを押すと折りたたまれ、読んでいた内容が消えていました。畳みたいときは右端の山形アイコンか、見出しの余白を押してください。
+**Clicking a topic or tag no longer collapses the card.** Previously, pressing a topic on an open card folded it away and the notes you were reading disappeared. To collapse a card, use the chevron on the right or click the empty part of its heading.
 
-**「今日の様子」を、開いた記録の見出しで確認・変更できます。** これまで色の帯でしか分からなかった段階が「元気」「やや消耗」といった言葉で出るようになり、そこを押せばその場で選び直せます。まだ付けていない記録には「＋ 様子」が出ます。
+**You can see and change “today’s read” from the heading of an open session.** The level now appears as a word — “Energized”, “A bit spent” — instead of only a colored band, and pressing it lets you pick a different one. Sessions without a read show “+ Read”.
 
-**記録の削除は「⋯」メニューに移りました。** 記録を開いて右上の「⋯」から削除できます（確認画面はこれまでどおりです）。
+**Deleting a session has moved to the “⋯” menu.** Open the session and use “⋯” at the top right (the confirmation step is unchanged).
 
-記録したデータはそのまま引き継がれます。
+Everything you have recorded carries over untouched.
 
-既知の制限（v0.2.0 から変わりません）
+Known limitations (unchanged from v0.2.0)
 
-- コード署名を行っていないため、初回起動時に OS の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
+- The app is not code-signed, so your OS shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
 
 ## v0.3.1
 
-**英語表示のときに「今日の様子」の選択肢が2行に折り返されていたのを直しました。** 7段階のうち最後の1つだけが次の行へ落ちてしまい、段階が並んでいるように見えませんでした。ウィンドウを広げても直らない不具合でした。あわせて英語の段階名を短い語に置き換えています（`Very spent`〜`Very lively`）。**日本語表示に変更はありません。**
+**Fixed the “today’s read” picker wrapping onto a second line in English.** The last of the seven levels dropped to its own row, so the levels no longer read as one scale — and widening the window did not help. The level names are now shorter words (`Very spent` to `Very lively`). **Japanese is unchanged.**
 
-記録したデータはそのまま引き継がれます。
+Everything you have recorded carries over untouched.
 
-既知の制限（v0.2.0 から変わりません）
+Known limitations (unchanged from v0.2.0)
 
-- コード署名を行っていないため、初回起動時に OS の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
+- The app is not code-signed, so your OS shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS support is Apple Silicon (M1 and later) only.
 
 ## v0.3.0
 
-**1on1 のたびに「今日の様子」を残せるようになりました。** 記録エディタで7段階（とても消耗している〜とても元気）から1つ選ぶだけです。選んだものをもう一度押せば取り消せます。**人事評価の道具ではなく、あなたから見た印象のメモ**です。
+**You can now record “today’s read” with each 1-on-1.** Pick one of seven levels (very drained → very energized) in the session editor. Press the same one again to clear it. **This is your own impression, not a performance rating.**
 
-**メンバーごとに「様子の推移」をグラフで見られます。** 人カードに並び、前回からの変化や、しばらく下がったままの人に気づけます。色だけでなく形と高さでも読めるようにしてあるので、色の見分けがつきにくい環境でも使えます。
+**Each person now has a mood trend chart.** It sits on their card, so you can see how the last session compares with earlier ones, or notice someone who has been low for a while. The chart is readable by shape and height as well as color, so it still works if colors are hard to tell apart.
 
-**メンバーにアイコン画像を設定できるようになりました。** 一覧に顔が並ぶと人を探しやすくなります。画像はアバターにドラッグ＆ドロップするか、アイコンをクリックして選んでください。設定した直後なら「元に戻す」で戻せます。**画像も端末内のデータベースに保存され、外部へは送信されません。**
+**You can give each person a photo.** Faces in the list make people easier to find. Drop an image onto the avatar, or click it to pick a file. You can undo a change right after making it. **Images are stored in the database on your machine and never transmitted.**
 
-**バージョンアップのときに、アプリが自動で移行前の控えを作るようになりました。** 記録の保存形式が変わる更新では、変更を加える前にデータベース全体の写しを保存します（直近3回ぶんを保持し、古いものから自動で消えます）。控えが作れなかった場合はデータに触らず起動を中止します。ご自身でのバックアップが不要になるわけではありませんが、更新で記録を失う事故を防ぎます。
+**The app now keeps a copy of your data before an upgrade changes it.** When an update changes how records are stored, rapore saves a full copy of the database first (the three most recent copies are kept; older ones are removed automatically). If the copy cannot be written, the app stops instead of touching your data. This does not replace your own backups, but it does protect you from losing notes during an update.
 
-**不具合修正**
+**Fixes**
 
-- 新しい記録を書いている途中に、同じ記録がタイムラインへ二重に表示されることがある問題を修正しました。
+- A session you were still writing could appear twice in the timeline. Fixed.
 
-既知の制限（v0.2.0 から変わりません）
+Known limitations (unchanged from v0.2.0)
 
-- コード署名を行っていないため、初回起動時に OS の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
+- The app is not code-signed, so your OS will warn you the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS is supported on Apple Silicon (M1 and later) only.
 
 ## v0.2.0
 
-**記録を削除できない不具合を修正しました。** 記録を開いて「削除」→「削除する」と進んでも何も起きない状態でした（v0.1.0 / v0.1.1 が該当します）。
+**Fixed: sessions could not be deleted.** Opening a session and choosing "Delete" then confirming did nothing (this affected v0.1.0 and v0.1.1).
 
-**日本語入力の変換を確定する Enter が、そのまま保存・追加として扱われる不具合を修正しました。** 「たろう」と打って変換した瞬間にメンバーが追加される、といったことが起きなくなります。メンバーの追加・氏名やチームの編集・タグの入力が対象です。
+**Fixed: the Enter key that confirms Japanese IME conversion was treated as "save" or "add".** Typing a name in Japanese no longer adds the member the moment you confirm the conversion. This affected adding members, editing name and team, and entering tags.
 
-**トピックとタグの入力を作り直しました。** 入力して Enter を押すと「チップ」になり、× で消せます。**カンマ区切りや改行のまま貼り付けると、まとめて追加されます**（別のメモからコピーしてくるときに便利です）。トピックはドラッグで並べ替えできます。
+**Topics and tags now use a chip input.** Type and press Enter to turn the text into a chip, and remove it with ×. **Pasting a comma- or newline-separated list adds every item at once**, which helps when copying from another note. Topics can be reordered by dragging.
 
-**横断検索にタグ・期間の絞り込みを追加しました。** キーワードを入れなくても、タグや期間だけで記録を絞り込めます。
+**Search now has tag and period filters.** You can narrow sessions down by tag or date range without typing a keyword.
 
-**記録一覧が読みやすくなりました。** その回に話したトピックが見出しとして目立つようになりました。
+**The session list is easier to scan.** The topics you covered now stand out as the heading of each entry.
 
-既知の制限（v0.1.1 から変わりません）
+Known limitations (unchanged since v0.1.1)
 
-- コード署名を行っていないため、初回起動時に OS の警告が出ます。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。
-- macOS は Apple Silicon（M1 以降）のみ対応です。
+- The app is not code-signed, so your OS shows a warning the first time you open it. See [INSTALL.md](./INSTALL.md).
+- macOS builds are for Apple Silicon (M1 or later) only.
 
 ## v0.1.1
 
-**macOS 版が「壊れているため開けません」と表示されて起動できない不具合を修正しました。**
+**Fixes the macOS build refusing to launch with "rapore is damaged and can't be opened."**
 
-v0.1.0 の macOS 版は、アプリの署名が中身と一致しない状態で配布されていました。そのため、ダウンロードした macOS がアプリを破損とみなし、ゴミ箱に入れる以外の選択肢を出さない状態になっていました。**アプリ自体が壊れていたわけではありません。**
+The macOS build of v0.1.0 shipped with a code signature that did not match the contents of the app bundle. macOS therefore treated the downloaded app as damaged and offered no option other than moving it to the Trash. **The app itself was never damaged.**
 
-**v0.1.0 をお使いの方は、この版に入れ替えてください。** データは別の場所に保存されているため、入れ替えても記録は失われません。
+**If you have v0.1.0, please replace it with this build.** Your data lives separately from the app, so nothing is lost when you replace it.
 
-なお本アプリはコード署名を行っていないため、初回起動時に OS の警告が出る点は変わりません。開き方は [INSTALL.md](./INSTALL.md) をご覧ください。**確実な手順としてターミナルでのコマンドを案内に追加しました。**
+The app is still not code-signed, so you will still see an OS warning on first launch. See [INSTALL.md](./INSTALL.md) for how to open it — **a reliable Terminal command has been added to those instructions.**
 
-Windows 版に変更はありません（v0.1.0 と同じ内容です）。
+The Windows build is unchanged from v0.1.0.
 
 ## v0.1.0
 
-初回リリース。
+First release.
 
-- メンバー（部下）の追加・編集・アーカイブ・完全削除
-- 1on1 セッションの記録（面談日・本文・トピック・タグ）。本文は Markdown の WYSIWYG エディタで編集でき、入力は自動保存されます
-- メンバー別のタイムラインで過去の 1on1 を時系列に参照
-- 本文・トピック・タグを横断するキーワード検索
-- メンバーダッシュボード（プロフィール4項目と履歴を並べて表示）
-- 指定フォルダへの自動バックアップ
-- 表示言語の切り替え（日本語 / English。既定は OS のロケールに追従）
-- データはすべて端末内の SQLite に保存。外部送信なし
+- Add, edit, archive, and permanently delete the people you have 1-on-1s with
+- Record 1-on-1 sessions (date, notes, topics, tags). Notes are edited in a Markdown WYSIWYG editor and saved automatically as you type
+- Per-person timeline for browsing past sessions in order
+- Keyword search across notes, topics, and tags for everyone at once
+- Member dashboard showing four profile fields next to the session history
+- Automatic backup to a folder you choose
+- English and Japanese (follows your OS locale by default)
+- Everything stored in SQLite on your machine. Nothing is transmitted
 
-**既知の制限**
+**Known limitations**
 
-- **macOS は Apple Silicon 搭載機のみ対応**です。Intel Mac 向けの版はありません（[INSTALL.md](./INSTALL.md)）
-- コード署名を行っていないため、初回起動時に OS の警告が出ます（[INSTALL.md](./INSTALL.md)）
-- 自動アップデートには未対応です。新版は手動でダウンロードしてください
-- DB ファイル自体の暗号化には未対応です（端末の FileVault / BitLocker の利用を推奨）
+- **macOS support is Apple Silicon only.** There is no build for Intel Macs ([INSTALL.md](./INSTALL.md))
+- The app is not code-signed, so your OS will warn you the first time you open it ([INSTALL.md](./INSTALL.md))
+- There is no automatic update. New versions must be downloaded manually
+- The database file itself is not encrypted. Turning on FileVault (macOS) or BitLocker (Windows) is recommended

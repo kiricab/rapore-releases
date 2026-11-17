@@ -1,114 +1,124 @@
-# プライバシーポリシー
+# Privacy Policy
 
-**日本語** | [English](./PRIVACY.en.md)
+**English (reference translation)** | [日本語（正文）](./PRIVACY.ja.md)
 
-最終更新: 2026-09-26
+Last updated: 2026-11-12
 
-rapore は、**部下の情報を外に出さない**ことを設計の中心に置いた 1on1 記録アプリです。
+> **This is a reference translation.** The Japanese version is the operative text. If the two differ, [the Japanese version](./PRIVACY.ja.md) governs (section 12).
 
-## 1. 収集する情報
+rapore is a 1-on-1 notes app designed around one idea: **your reports' information does not leave your machine.**
 
-**開発者は、利用者に関するいかなる情報も収集しません。**
+## 1. What we collect
 
-- 個人情報の収集: なし
-- 利用統計・テレメトリ・クラッシュレポートの送信: なし
-- アカウント登録: 不要
-- 広告・トラッキング: なし
+**The developer collects no information about you whatsoever.**
 
-## 2. データの保存場所
+- Personal information collected: none
+- Usage analytics, telemetry, crash reports: none
+- Account registration: not required
+- Advertising or tracking: none
 
-あなたが入力したすべてのデータ（メンバー名、1on1 の本文、プロフィール、トピック、タグ、**今日の様子（7段階の記録）**、**メンバーのアイコン画像**、本文に貼り付けた画像）は、**あなたの端末内の SQLite ファイル 1 つ**に保存されます。画像もこのファイルの中に入るので、外部のフォルダやサーバーに置かれることはありません。
+## 2. Where your data is stored
 
-| OS | 保存場所 |
+Everything you type — names, 1-on-1 notes, profiles, topics, tags, **today’s read (the seven-level entry)**, **member photos**, and images you paste into your notes — is stored in **a single SQLite file on your own machine**. Images live inside that same file, so nothing is written to an outside folder or server.
+
+| OS | Location |
 |---|---|
 | macOS | `~/Library/Application Support/rapore/rapore.db` |
 | Windows | `%APPDATA%\rapore\rapore.db` |
 
-正確なパスはアプリの設定画面に表示されます。このファイルはあなたの管理下にあり、**開発者はアクセスできません**（アプリが外部へ送信しないため、開発者の手元にあなたのデータが届く経路がそもそもありません）。
+The exact path is shown in the app's Settings screen. This file is yours, and **the developer cannot reach it** — because the app sends nothing outbound, there is no route by which your data could arrive on the developer's side.
 
-ただし、**あなた自身が「AI連携」を有効にした場合に限り**、あなたが接続した生成AIがこのデータを読めるようになります。既定ではオフで、そのあいだは経路そのものが存在しません。詳しくは [4. あなたのAIから rapore を操作させたとき](#4-あなたのaiから-rapore-を操作させたときai連携既定オフ) をお読みください。
+There is one exception, and only if **you** create it: when you turn on **AI access**, the AI client you connect can read this data. It is off by default, and while it is off the route does not exist at all. See [4. Letting your own AI work with rapore](#4-letting-your-own-ai-work-with-rapore-ai-access-off-by-default).
 
-## 3. ネットワーク通信
+## 3. Network traffic
 
-**rapore は、既定では外部へ通信を行いません。** ライセンスのオンライン照会、同期、バックアップのアップロード、利用統計・テレメトリ・クラッシュレポートの送信は、設定にかかわらず**一切行いません**。インターネットに接続していない環境でも全機能が動作します。
+**By default, rapore makes no outbound connections.** It never validates licences online, syncs, uploads backups, or sends usage analytics, telemetry or crash reports — no setting turns any of that on. Every feature works with no internet connection at all.
 
-例外は次の2つだけです。
+There are exactly two exceptions.
 
-### (1) 更新の確認（既定オフ・あなたが有効にしたときだけ）
+### (1) Checking for a new version (off by default, only if you turn it on)
 
-設定の「新しいバージョンをお知らせする」を有効にすると、アプリは1日1回まで、配布リポジトリの**最新バージョンの番号だけ**を GitHub に問い合わせます。
+If you enable "Tell me about new versions" in Settings, the app asks GitHub — at most once a day — for **the latest version number** of the releases repository, and nothing else.
 
-- 問い合わせに含まれるのは、接続そのもの（GitHub 側から見える IP アドレスとアプリの名称）だけです。**あなたが入力したデータ、メンバーの情報、利用状況、端末の識別子は一切含まれません。**
-- 新しいバージョンが見つかっても、**アプリが更新ファイルをダウンロードしたり自分を入れ替えたりすることはありません。** 画面にお知らせを出すだけで、取りに行くかどうかはあなたが決めます。
-- **既定はオフです。** 初回起動時に一度だけ可否を尋ねますが、**あなたが「知らせる」を選ぶまで、この通信は1回も発生しません。** 選んだあとも **設定 → 一般** でいつでも戻せます。
+- The request carries only itself: the connection GitHub sees (your IP address and the app's name). **Nothing you have typed, no details about your reports, no usage data and no device identifier is included.**
+- Even when a newer version exists, **the app never downloads an update or replaces itself.** It shows you a notice; going to fetch it is your decision.
+- **It is off by default.** The app asks you once, on first launch, and **until you choose "Tell me", this request never happens even once.** You can change your mind at any time under **Settings → General**.
 
-### (2) アプリ内のリンクを開いたとき
+### (2) Opening a link from inside the app
 
-購入ページ等のリンクをクリックすると、**その URL を OS の既定ブラウザで開きます**。この場合の通信はブラウザが行うものであり、rapore は何も送信しません。あなたが入力したデータが URL に含まれることはありません。
+Clicking a link (for example, a purchase page) **opens that URL in your default browser**. The browser makes that request, not rapore, and nothing you have typed is ever included in the URL.
 
-> なお、**rapore 自身の外部通信ではありません**が、あなたが有効にした場合に限り、端末内で動く生成AIへデータを渡す経路ができます（**既定オフ**）。性質が異なるため次の 4. に分けて説明します。
+> Separately: **this is not outbound traffic from rapore**, but if you turn it on, a route is created that hands your data to a generative AI running on your own machine (**off by default**). Because it is different in kind, it has its own section — 4. below.
 
-## 4. あなたのAIから rapore を操作させたとき（AI連携・既定オフ）
+## 4. Letting your own AI work with rapore (AI access, off by default)
 
-rapore は、あなたが自分で契約している生成AI（Claude Desktop、Claude Code、Codex CLI 等）から 1on1 の記録を読み書きできる仕組み（MCP サーバー）を内蔵しています。**この機能は既定でオフです。オフのあいだは、このセクションに書かれたことは何ひとつ起こりません。**
+rapore ships with a way for a generative AI you pay for yourself (Claude Desktop, Claude Code, Codex CLI, and so on) to read and write your 1-on-1 records — a built-in MCP server. **This is off by default. While it is off, nothing in this section happens.**
 
-有効にした場合に何が起こるかを、正確に書きます。
+If you turn it on, here is exactly what does and does not happen.
 
-- **rapore 自身は、この機能でも外部へ一切送信しません。** rapore が用意するのは端末内の通信口（ソケットファイル）1つだけで、**ネットワークのポートは開きません**。
-- **送信するのは、あなたが接続したAIクライアントです。** AI に読ませた記録の内容は、**そのAIの提供元（Anthropic、OpenAI 等）に渡ります。** そこでどう扱われるかは**そのサービスのプライバシーポリシーの対象**であり、rapore の管理外です。
-- **その時点であなたのデータは端末外に出ます。** この判断は利用者に委ねられています（6. の同期フォルダと同じ考え方です）。
+- **Even with this feature, rapore itself sends nothing outbound.** All rapore provides is a single local channel on your machine (a socket file). **It opens no network port.**
+- **The one doing the sending is the AI client you connected.** Whatever records you let the AI read **go to that AI's provider (Anthropic, OpenAI, and so on).** How they handle it **falls under that service's privacy policy** and is outside rapore's control.
+- **At that point your data does leave your machine.** That decision is yours to make — the same principle as the sync folders in 6.
 
-### 許可の範囲は2段階に分かれています
+### Permission comes in two steps
 
-| 設定 | AI が読めるもの | AI が書けるもの |
+| Setting | What the AI can read | What the AI can write |
 |---|---|---|
-| **オフ（既定）** | なし（**経路そのものが存在しません**） | なし |
-| 「AI連携を有効にする」だけ | メンバーの名前・役割・チーム | 記録の登録・編集、プロフィールの更新 |
-| 「参照も許可する」も有効 | 上記 ＋ **記録の本文・プロフィール・様子** | 同上 |
+| **Off (default)** | Nothing (**the route does not exist**) | Nothing |
+| "Enable AI access" only | Member names, roles, teams | Create and edit records; update profiles |
+| "Also allow reading" enabled | The above + **record bodies, profiles, today's read** | Same as above |
 
-- **書き込みだけを許した場合でも、メンバーの名前・役割・チームはAIに渡ります。** 「誰の記録なのか」を決めるために必要だからです。記録の本文・プロフィール・様子は渡りません。
-- **記録の本文をAIに読ませたくない場合は、「参照も許可する」をオフのままにしてください。**
-- 初回の有効化時に、以上の内容を確認する画面が出ます。**あなたが明示的に許可するまで、この経路は作られません。** 有効にしたあとも **設定 → AI連携** でいつでも戻せます。
+- **Even when you allow writing only, member names, roles and teams do go to the AI.** They are needed to decide whose record it is. Record bodies, profiles and today's read do not.
+- **If you do not want the AI reading your record bodies, leave "Also allow reading" off.**
+- The first time you enable it, a screen shows you all of the above. **Until you explicitly allow it, this route is never created.** You can change your mind at any time under **Settings → AI access**.
 
-### 仕組みの詳細
+### How it works
 
-- 接続には合言葉（トークン）を使います。他のプログラムが勝手に繋ぐことを防ぐためのもので、**設定ファイル（`rapore-settings.json`）に平文で保存されます**（ライセンスキーと同じ扱いです）。通信口のファイル自体も、あなた以外は読めない権限で作られます。
-- rapore は、AI が行った操作の記録（直近の操作名と回数）を**アプリのメモリ上にだけ**持ち、設定画面に表示します。**ファイルには書き出しません** — 「AI がどのメンバーの記録を読んだか」という記録それ自体が機微な情報だからです。
+- Connecting requires a shared secret (a token). It exists to stop other programs connecting on their own, and it is **stored in plain text in the settings file (`rapore-settings.json`)** — the same treatment as your licence key. The channel file itself is created so that only you can read it.
+- rapore keeps a record of what the AI did (the most recent operation name and counts) **in memory only**, and shows it in Settings. **It is never written to a file** — a log of "which member's records the AI read" would itself be sensitive information.
 
-## 5. データの暗号化について
+## 5. About encryption
 
-現在のバージョンでは、DB ファイル自体の暗号化は行っていません。**端末そのものの暗号化（macOS の FileVault、Windows の BitLocker）を有効にすることを強く推奨します。** 保存時暗号化はロードマップに含まれています。
+rapore does not add its own encryption to the database file. **We strongly recommend turning on full-disk encryption — FileVault on macOS, BitLocker on Windows.** It is the reliable protection if your computer is lost or stolen.
 
-## 6. バックアップと同期フォルダの注意
+We leave encryption to the operating system because **an app-level key that is lost cannot be recovered by anyone**. rapore has no server, so if you forgot a password or lost the key when moving to a new computer, not even the developer could get your records back. Full-disk encryption comes with recovery options provided by your operating system. rapore puts not losing your records first, and relies on the operating system to protect them at rest.
 
-バックアップは **設定 → バックアップ → 「バックアップを作成（.db）」** から行ってください。SQLite のオンラインバックアップを使うため、アプリを使ったままでも整合性のある1ファイルが書き出されます。
+Backups written to a sync folder as described in section 6 are also unencrypted SQLite files.
 
-**DB ファイルを手でコピーする方法は勧めません。** rapore は SQLite の WAL モードで動いており、直近の記録が `rapore.db-wal` という別ファイルにいることがあるため、`rapore.db` だけをコピーすると最近のデータが失われます。手でコピーするなら、アプリを完全に終了してからフォルダごとコピーしてください。
+## 6. Backups and sync folders
 
-同じ理由で、DB ファイルを Dropbox / iCloud Drive / OneDrive 等の同期フォルダに**そのまま**置くとデータが破損することがあります。同期フォルダには、アプリが書き出した写しを置いてください（自動バックアップ機能が指定フォルダへ一貫したスナップショットを書き出します）。
+To back up, use **Settings → Backup → "Create a backup (.db)"** in the app. It uses SQLite's online backup, so you get a single consistent file even while you're using the app.
 
-なお、同期フォルダへ書き出したバックアップは、そのクラウドサービスのプライバシーポリシーの対象になります。**その時点であなたのデータは端末外に出ます**のでご注意ください。この判断は利用者に委ねられています。
+**Copying the database file by hand is not recommended.** rapore runs SQLite in WAL mode, so your most recent sessions may still be in a separate `rapore.db-wal` file — copying only `rapore.db` loses them. If you must copy by hand, quit the app completely first and copy the whole folder.
 
-また、**記録の保存形式が変わるバージョンアップでは、アプリが自動で移行前の控えを作ります**（DB と同じフォルダに `rapore-pre-v<版>-<日時>.db` という名前で、直近3回ぶんを保持し、古いものから自動で消えます）。この控えも端末内に置かれるだけで、外部へは送信されません。
+For the same reason, putting the database file **directly** into a Dropbox / iCloud Drive / OneDrive folder can corrupt it. Put a copy written by the app there instead (the automatic backup feature writes a consistent snapshot to a folder you choose).
 
-## 7. データの持ち出し（ポータビリティ）
+Note that a backup written into a sync folder then falls under that cloud service's privacy policy. **At that point your data does leave your machine.** That decision is yours to make.
 
-1on1 の本文とプロフィールは、独自形式ではなく**生の Markdown 文字列**として保存されています。DB ファイルは標準的な SQLite なので、いつでも他のツールで読み出せます。あなたのデータをこのアプリに閉じ込めない設計です。
+Also, **when an update changes how records are stored, the app automatically saves a copy before migrating** (named `rapore-pre-v<version>-<timestamp>.db`, next to your database; the three most recent are kept and older ones are removed automatically). These copies stay on your machine and are never transmitted.
 
-## 8. 第三者提供
+## 7. Getting your data out
 
-**開発者は**、該当する情報を保持していないため、第三者へ提供することもありません。
+Session notes and profile fields are stored as **plain Markdown strings**, not a proprietary format, and the database is standard SQLite. You can read it with other tools whenever you want. This app is not designed to trap your data.
 
-なお、4. の AI連携を**あなたが**有効にした場合、あなたが選んだAIサービスへデータが渡りますが、これは開発者による第三者提供ではなく、**あなた自身がそのサービスを利用する行為**です。その扱いは当該サービスのプライバシーポリシーに従います。
+## 8. Disclosure to third parties
 
-## 9. 免責
+**The developer** holds no such information, so there is nothing for the developer to disclose.
 
-本ポリシーは rapore アプリケーション本体の動作について述べたものです。OS やあなたが導入している他のソフトウェア（バックアップツール、セキュリティソフト等）の挙動については関知しません。
+If **you** turn on the AI access described in 4., data does go to the AI service you chose. That is not disclosure by the developer — it is **you using that service**, and its handling follows that service's privacy policy.
 
-## 10. 変更
+## 9. Scope
 
-本ポリシーを変更する場合は、このファイルを更新し [CHANGELOG.md](./CHANGELOG.md) に記載します。
+This policy describes the behaviour of the rapore application itself. It says nothing about your operating system or other software you have installed (backup tools, security software, and so on).
 
-## 11. お問い合わせ
+## 10. Changes
 
-[Issues](../../issues) からご連絡ください。
+If this policy changes, this file is updated and the change is noted in [CHANGELOG.md](./CHANGELOG.md).
+
+## 11. Contact
+
+Please open an [Issue](../../issues).
+
+## 12. Governing text
+
+**The Japanese version of this policy is the operative text.** Versions in English or any other language are reference translations; in case of any discrepancy, [the Japanese version](./PRIVACY.ja.md) prevails.

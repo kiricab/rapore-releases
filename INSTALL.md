@@ -1,152 +1,150 @@
-# インストール手順
+# Installing rapore
 
-**日本語** | [English](./INSTALL.en.md)
+**English** | [日本語](./INSTALL.ja.md)
 
-> **最初にお読みください。** **macOS 版は Apple の公証（notarization）を受けており**、ダウンロードしてそのまま開けます。**Windows 版はまだコード署名を行っていない**ため、初回起動時に「Windows によって PC が保護されました」という警告が出ます。これは rapore に問題があるからではなく、個人開発のアプリが Windows 用の有料の署名証明書をまだ取得していないためです。以下の手順で開けます。
+> **Please read this first.** **The macOS version is notarized by Apple**, so you can download it and open it as is. **The Windows version is not code-signed yet**, so Windows will show a "Windows protected your PC" warning the first time you open it. This is not a sign that something is wrong with rapore — it's because a solo developer has not yet paid for a Windows signing certificate. The steps below get you through it.
 
 ---
 
 ## macOS
 
-### 0. 対応している Mac の確認
+### 0. Check your Mac
 
-**rapore は Apple Silicon 搭載の Mac（M1 / M2 / M3 / M4 …）専用です。Intel 搭載の Mac には対応していません。** また **macOS 13 Ventura 以降**が必要です。
+**rapore requires a Mac with Apple Silicon (M1 / M2 / M3 / M4 …). Intel Macs are not supported.** It also requires **macOS 13 Ventura or later**.
 
-「アップルメニュー →  このマックについて」の「チップ」欄をご覧ください。
+Open  menu → About This Mac and look at the "Chip" line.
 
-- **Apple M1 / M2 / M3 / M4 …** と表示される → 対応しています。次へ進んでください
-- **Intel Core …** と表示される → 申し訳ありませんが、現在ご利用いただけません
+- It says **Apple M1 / M2 / M3 / M4 …** → you're good, continue below
+- It says **Intel Core …** → sorry, rapore won't run on this machine
 
-同じ画面の上部に macOS の名前とバージョンが出ます。**13（Ventura）より前**（12 Monterey・11 Big Sur）の場合は、先に「システム設定 → 一般 → ソフトウェアアップデート」から macOS を更新してください。
+The macOS name and version appear at the top of the same window. If it's **older than 13 (Ventura)** — 12 Monterey or 11 Big Sur — update macOS first from System Settings → General → Software Update.
 
-Intel Mac 向けの版はありません（Rosetta でも動きません。Rosetta は Intel 用アプリを Apple Silicon で動かす仕組みで、その逆はできないためです）。
+There is no Intel build. Rosetta doesn't help either: Rosetta runs Intel apps on Apple Silicon, not the other way around.
 
-### 1. ダウンロード
+### 1. Download
 
-`rapore-<version>-arm64.dmg` をダウンロードします。
+Download `rapore-<version>-arm64.dmg`.
 
-### 2. インストール
+### 2. Install
 
-DMG をダブルクリックして開き、`rapore` を `アプリケーション` フォルダへドラッグします。
+Double-click the DMG and drag `rapore` into your `Applications` folder.
 
-### 3. 初回起動
+### 3. First launch
 
-`rapore` をダブルクリックすると、初回だけ次の確認が出ます。
+The first time you double-click `rapore`, macOS asks for confirmation:
 
-> "rapore" はインターネットからダウンロードされたアプリケーションです。このアプリケーションを開いてもよろしいですか？
+> "rapore" is an app downloaded from the Internet. Are you sure you want to open it?
 
-**「開く」** をクリックすると起動します。2 回目以降は普通にダブルクリックで起動します。
+Click **Open** and rapore starts. After that, it opens normally with a double-click.
 
-rapore は Apple の公証を受けているので、ターミナルでの操作やシステム設定の変更は不要です。
+rapore is notarized by Apple, so you don't need Terminal or any changes in System Settings.
 
-> **v0.4.0 以前をお使いだった方へ**: 以前の版はコード署名を行っておらず、ターミナルのコマンド（`xattr`）などで開いていただいていました。v0.4.0 より後の版ではその操作は要りません。
+> **If you used v0.4.0 or earlier**: earlier versions were not code-signed, and you had to open them with a Terminal command (`xattr`) or similar. Versions after v0.4.0 don't need that.
 
 ---
 
 ## Windows
 
-### 1. ダウンロード
+### 1. Download
 
-`rapore-Setup-<version>-x64.exe` をダウンロードします。
+Download `rapore-Setup-<version>-x64.exe`.
 
-### 2. 初回起動（ここで警告が出ます）
+### 2. First launch (this is where the warning appears)
 
-ダブルクリックすると
+Double-clicking it shows:
 
-> Windows によって PC が保護されました
+> Windows protected your PC
 
-と表示されます。
+1. Click **"More info"**
+2. Click the **"Run anyway"** button that appears
 
-1. **「詳細情報」** をクリック
-2. 現れた **「実行」** ボタンをクリック
+(Your browser may also warn you during the download. If so, choose "Save" → "Show more" → "Keep".)
 
-（ブラウザのダウンロード時にも警告が出ることがあります。その場合は「保存」→「詳細表示」→「保持する」を選んでください。）
+### 3. Install
 
-### 3. インストール
-
-インストーラの指示に従ってください。完了するとスタートメニューに `rapore` が追加されます。
+Follow the installer. When it finishes, `rapore` is added to your Start menu.
 
 ---
 
-## AI から使う（任意・既定はオフ）
+## Using it from your AI (optional, off by default)
 
-あなたが契約している生成AI（Claude Desktop・Claude Code・Cursor・Codex CLI など）から、1on1 の記録を登録したり読ませたりできます。**既定ではオフで、あなたが有効にするまでこの経路は存在しません。**
+You can have a generative AI you pay for yourself (Claude Desktop, Claude Code, Cursor, Codex CLI, and so on) create and read your 1-on-1 records. **This is off by default, and the route does not exist until you turn it on.**
 
-> ⚠️ **先に知っておいてください。** rapore 自身は何も送信しませんが、**AI に読ませた記録の内容は、そのAIの提供元（Anthropic・OpenAI など）に渡ります。** その扱いは各サービスのプライバシーポリシーの対象で、rapore の管理外です。詳しくは[プライバシーポリシーの「4. あなたのAIから rapore を操作させたとき」](./PRIVACY.md)をお読みください。
+> ⚠️ **Know this first.** rapore itself sends nothing, but **whatever records you let the AI read go to that AI's provider (Anthropic, OpenAI, and so on).** How they handle it falls under their privacy policy and is outside rapore's control. See ["4. Letting your own AI work with rapore"](./PRIVACY.md) for the details.
 
-### 使えるAI
+### Which AI works
 
-**あなたの端末で動くクライアント**が必要です。
+You need a client that **runs on your own machine**.
 
-| 使える | 使えない |
+| Works | Does not work |
 |---|---|
-| Claude Desktop / Claude Code / Cursor / Codex CLI など | ChatGPT のコネクタ、Codex のクラウド実行など**クラウドで動くもの** |
+| Claude Desktop / Claude Code / Cursor / Codex CLI, and similar | ChatGPT connectors, Codex cloud tasks, and anything else **running in the cloud** |
 
-クラウドで動くAIは、あなたの端末の中にしか無い経路に届かないため利用できません（データを外に置かない設計の裏返しです）。
+Cloud-run AI cannot reach a route that exists only inside your machine — which is the flip side of not putting your data anywhere else.
 
-### 手順
+### Steps
 
-1. rapore の **設定 → AI連携** を開きます。
-2. 「AI連携を有効にする」をオンにします。確認の画面が出るので、内容を読んで「有効にする」を押してください。
-3. 記録の**本文**も読ませたい場合は、続けて「参照も許可する」もオンにします（**別の同意**です。オフのままなら、AI ができるのは記録の登録・編集と、メンバーの名前・役割・チームの参照までです）。
-4. 「クライアント」で使うAIを選ぶと、**貼り付け先のファイル**と**貼り付ける内容**が表示されます。そのまま設定ファイルに貼り付けてください。
-5. AI クライアントを再起動します。
+1. Open **Settings → AI access** in rapore.
+2. Turn on "Enable AI access". A confirmation screen appears; read it and choose "Enable".
+3. If you also want the AI to read the **body** of your records, turn on "Also allow reading" as well (**a separate consent**. Left off, the AI can only create and edit records and read member names, roles and teams).
+4. Pick your client under "Client" and rapore shows you **which file to paste into** and **what to paste**. Paste it into that configuration file as-is.
+5. Restart your AI client.
 
-> パスや合言葉はあなたの端末のものが埋め込まれた状態で表示されます。**手で打ち直さないでください**（書式ごとに引用符の規則が違うため、写し間違えると繋がりません）。
+> The paths and the shared secret are shown already filled in for your machine. **Do not retype them by hand** — the quoting rules differ per format, so a transcription slip means it will not connect.
 
-### うまくいかないとき
+### If it does not work
 
-- AI 側に「rapore が起動していないか、設定 > AI連携 が無効です」と出る → rapore を起動し、設定がオンになっているか確認してください。rapore を起動し直せば、AI クライアントの再起動は要りません。
-- 設定画面に「停止しています」と出る → rapore を再起動してください。
-- rapore を別の場所へ移動した → 貼り付ける内容が変わります。設定画面からもう一度コピーしてください。
+- Your AI says rapore is not running or AI access is off → start rapore and check the setting. Once rapore is running you do not need to restart your AI client.
+- Settings says "Not listening" → restart rapore.
+- You moved rapore somewhere else → what you paste changes. Copy it again from Settings.
 
 ---
 
-## アンインストールとデータの場所
+## Uninstalling, and where your data lives
 
-アプリを消してもデータは残ります。データも完全に消したい場合は以下のフォルダを削除してください。
+Removing the app leaves your data in place. To delete the data as well, remove the folder below.
 
-| OS | データの場所 |
+| OS | Location |
 |---|---|
 | macOS | `~/Library/Application Support/rapore/` |
 | Windows | `%APPDATA%\rapore\` |
 
-この中の `rapore.db` が本体です。正確なパスはアプリの設定画面にも表示されています。
+`rapore.db` inside it is the database. The exact path is also shown in the app's Settings screen.
 
-> ⚠️ **バックアップを取るときは、このファイルを手でコピーしないでください。**
-> rapore は SQLite の WAL モードで動いており、**直近の記録は `rapore.db-wal` という別ファイルにいることがあります**。`rapore.db` だけをコピーすると、最近の 1on1 が抜け落ちます。アプリの起動中にコピーすると壊れたファイルになることもあります。
+> ⚠️ **Do not back up by copying that file by hand.**
+> rapore runs SQLite in WAL mode, so **your most recent sessions may still be sitting in a separate `rapore.db-wal` file**. Copying only `rapore.db` will silently lose them, and copying while the app is running can produce a corrupt file.
 >
-> **正しい方法**: アプリの **設定 → バックアップ → 「バックアップを作成（.db）」** を使ってください。整合性のある1ファイルとして書き出されます（アプリを使ったままで大丈夫です）。
+> **Do this instead**: use **Settings → Backup → "Create a backup (.db)"** in the app. It writes a single, consistent file, and it's safe to do while you're using the app.
 >
-> どうしても手でコピーする場合は、**アプリを完全に終了してから、`rapore` フォルダごと**コピーしてください（`rapore.db-wal` / `rapore.db-shm` が残っていることがあるため）。
+> If you really must copy by hand, **quit the app completely first and copy the whole `rapore` folder** (`rapore.db-wal` and `rapore.db-shm` may still be there).
 
-- macOS: `rapore` を `アプリケーション` フォルダから削除
-- Windows: 「設定 → アプリ → インストールされているアプリ」から `rapore` をアンインストール
+- macOS: delete `rapore` from your `Applications` folder
+- Windows: Settings → Apps → Installed apps → uninstall `rapore`
 
 ---
 
-## アップデート
+## Updating
 
-新しいバージョンが出たことに気づく方法は3つあります。どれを使うかはあなたが選べます。
+There are three ways to find out that a new version is out. Pick whichever suits you.
 
-### 1. アプリからお知らせを受け取る（既定はオフ）
+### 1. Let the app tell you (off by default)
 
-rapore は、**あなたが有効にしたときだけ**、起動時に最新バージョンの番号を GitHub に問い合わせ、新しいものが出ていればアプリ内でお知らせします。初回起動時に一度だけ「お知らせしますか？」と尋ねますので、そこで選んでください。あとから **設定 → 一般 → 「新しいバージョンをお知らせする」** でいつでも切り替えられます。
+**Only if you turn it on**, rapore asks GitHub for the latest version number at startup and tells you inside the app when a newer one is out. It asks you once, on first launch, whether you want this. You can change your mind any time under **Settings → General → "Tell me about new versions"**.
 
-**既定はオフです＝アプリは何も通信しません。** 有効にした場合も、問い合わせるのは最新バージョンの番号だけで、**あなたの記録・メンバーの情報・利用状況は一切送信されません**（[プライバシーポリシー](./PRIVACY.md)）。
+**It is off by default — the app makes no connection at all.** Even when it is on, the only thing requested is the latest version number: **none of your notes, your reports' details, or your usage is ever sent** (see the [Privacy Policy](./PRIVACY.md)).
 
-### 2. GitHub から通知を受け取る（GitHub アカウントが必要）
+### 2. Get notified by GitHub (needs a GitHub account)
 
-[配布リポジトリ](../../)の右上 **Watch → Custom → Releases** にチェックを入れると、新しいバージョンが出たときにメールで届きます。
+On the [releases repository](../../), use **Watch → Custom → Releases** at the top right. GitHub then emails you when a new version ships.
 
-### 3. フィードで受け取る（アカウント不要）
+### 3. Subscribe to the feed (no account needed)
 
-RSS / Atom リーダーに次の URL を登録してください。
+Add this URL to any RSS / Atom reader:
 
 ```
 https://github.com/kiricab/rapore-releases/releases.atom
 ```
 
-### 更新の手順
+### How to update
 
-[Releases](../../releases/latest) から新しいバージョンをダウンロードし、初回と同じ手順で上書きインストールしてください。**データは保持されます**（データはアプリ本体とは別の場所に保存されているため）。アプリが更新ファイルをダウンロードして自分を入れ替える機能はありません。
+Download the newer version from [Releases](../../releases/latest) and install it over the top, the same way you installed it the first time. **Your data is kept** — it lives separately from the app itself. The app never downloads an update or replaces itself.

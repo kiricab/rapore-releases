@@ -1,71 +1,71 @@
 # rapore
 
-**日本語** | [English](./README.en.md)
+**English** | [日本語](./README.ja.md)
 
-**ローカル完結・プライバシーファーストな 1on1 記録デスクトップアプリ**
+**A local-first, privacy-first desktop app for keeping 1-on-1 notes**
 
-会社のツール導入を待たず、個人マネージャーが「部下ごとの 1on1 履歴をすばやく参照」し、メンバーの「人となり」をダッシュボードで把握できます。**データはすべてあなたの端末内の SQLite ファイルに保存され、外部に送信されません。**
+Keep a per-report history of your 1-on-1s and see who each person actually is — without waiting for your company to buy a tool. **Everything is stored in a SQLite file on your own machine and never leaves it.**
 
-> 会社のツールを待たずに、今日から個人で始められる、部下の情報を外に出さない 1on1 ノート
+> The 1-on-1 notebook you can start on your own today, that keeps your reports' information off the internet.
 
-![メンバーダッシュボード](./docs/images/ja/02-dashboard.png)
+![Member dashboard](./docs/images/en/02-dashboard.png)
 
-*メンバーダッシュボード — 左に「人となり」、右に 1on1 の履歴。*
+*Member dashboard — who they are on the left, your 1-on-1 history on the right.*
 
-## ダウンロード
+## Download
 
-最新版は **[Releases](../../releases/latest)** から取得してください。
+Get the latest build from **[Releases](../../releases/latest)**.
 
-| OS | ファイル |
+| OS | File |
 |---|---|
-| macOS（Apple Silicon / M1 以降） | `rapore-<version>-arm64.dmg` |
-| Windows 10 / 11（64bit） | `rapore-Setup-<version>-x64.exe` |
+| macOS (Apple Silicon / M1 and later) | `rapore-<version>-arm64.dmg` |
+| Windows 10 / 11 (64-bit) | `rapore-Setup-<version>-x64.exe` |
 
-> ⚠️ **Windows 版はまだコード署名を行っていません**。初回起動時に Windows の警告が出ます。開き方は **[INSTALL.md](./INSTALL.md)** をお読みください（macOS 版は Apple の公証済みで、そのまま開けます）。
+> ⚠️ **The Windows version is not code-signed yet**, so Windows will warn you the first time you open it. Please read **[INSTALL.md](./INSTALL.md)** before installing (the macOS version is notarized by Apple and opens as is).
 
-## 主な機能
+## What it does
 
-- **メンバー（部下）管理** — 追加・編集・アーカイブ・完全削除
-- **1on1 セッション記録** — 面談日・本文（Markdown / WYSIWYG エディタ）・トピック・タグ
-- **履歴の高速参照** — メンバー別タイムライン、横断キーワード検索（本文・トピック・タグ）。メンバー・タグ・期間で絞り込めます
-- **今日の様子** — 1on1 ごとに7段階で「あなたから見た印象」を残し、メンバーごとの推移をグラフで確認（人事評価の道具ではありません）
-- **メンバーのアイコン** — 顔写真を設定して一覧から人を見つけやすく（画像も端末内に保存されます）
-- **メンバーダッシュボード** — プロフィール4項目（価値観・モチベーション／キャリア志向・目標／強み・働き方・コミュニケーション傾向／個人的コンテキスト）と履歴を並べて表示
-- **ローカル保存** — 端末内 SQLite。保存場所はアプリの設定画面で確認できます。**バージョンアップで保存形式が変わるときは、変更前に自動で控えを作ります**（直近3回ぶん）
-- **日本語 / English** — 表示言語を切り替えできます（既定は OS のロケールに追従）
-- **AI連携（任意・既定オフ）** — あなたが契約している生成AI（Claude Desktop・Claude Code・Cursor・Codex CLI など）から、記録の登録や読み込みができます。設定画面の内容をコピーして AI クライアントに貼るだけです。**AI に読ませた内容はそのAIの提供元に渡ります**（[INSTALL.md](./INSTALL.md) / [PRIVACY.md](./PRIVACY.md)）
-- **新しいバージョンのお知らせ（任意・既定オフ）** — 有効にすると、新しい版が出たときにアプリ内でお知らせします。問い合わせるのは最新バージョンの番号だけです
+- **Manage your reports** — add, edit, archive, or delete permanently
+- **Record 1-on-1s** — date, notes (Markdown / WYSIWYG), topics, tags
+- **Find past sessions fast** — a per-person timeline plus keyword search across everyone (notes, topics, tags), narrowed by person, tag, or date range
+- **Today’s read** — record how someone seemed to you on a seven-level scale after each 1-on-1, and see the trend per person (it is your impression, not a performance rating)
+- **Member photos** — give each person a photo so the list is easier to scan (images are stored on your machine too)
+- **Member dashboard** — four profile fields (values & motivation / career direction & goals / strengths, working & communication style / personal context) shown next to the history
+- **Stored locally** — SQLite on your machine. The exact path is shown in Settings. Nothing is transmitted. **Before an update changes how records are stored, the app saves a full copy first** (the three most recent are kept)
+- **English and Japanese** — follows your OS locale by default, switchable in Settings
+- **AI access (optional, off by default)** — let the AI you already use (Claude Desktop, Claude Code, Cursor, Codex CLI, and so on) add and read your 1-on-1 records. Copy the snippet from Settings and paste it into your AI client. **Whatever your AI reads goes to that AI's provider** (see [INSTALL.md](./INSTALL.md) / [PRIVACY.md](./PRIVACY.md))
+- **New-version notice (optional, off by default)** — when turned on, the app tells you when a new version is out. It asks only for the latest version number
 
-## 画面
+## Screens
 
 | | |
 |---|---|
-| ![横断検索](./docs/images/ja/03-search.png) | ![メンバー一覧](./docs/images/ja/01-members.png) |
-| **横断検索** — 全メンバーの記録を本文・トピック・タグから探す | **メンバー一覧** — 部下と次回1on1の予定 |
+| ![Search](./docs/images/en/03-search.png) | ![Member list](./docs/images/en/01-members.png) |
+| **Search across everyone** — find sessions by notes, topics, or tags | **Member list** — your reports and upcoming 1-on-1s |
 
-> データの保存場所は、アプリの **設定 → このアプリについて** にフルパスで表示されます。
+> The app shows you the full path to your data under **Settings → About**.
 
-## 動作環境
+## Requirements
 
-- macOS 13 Ventura 以降（**Apple Silicon 搭載機のみ。Intel Mac には対応していません**）
-- Windows 10 / 11（64bit）
-- インターネット接続は不要です（「新しいバージョンのお知らせ」を有効にした場合のみ使います）
+- macOS 13 Ventura or later (**Apple Silicon only. Intel Macs are not supported**)
+- Windows 10 / 11 (64-bit)
+- No internet connection required (used only if you turn on the new-version notice)
 
-## データの取り扱い
+## Your data
 
-- すべてのデータは端末内の SQLite ファイルに保存され、外部へ送信されません。AI連携を有効にした場合も rapore 自身は何も送信しませんが、AI に読ませた内容はそのAIの提供元に渡ります。詳しくは **[PRIVACY.md](./PRIVACY.md)**。
-- 本文とプロフィールは**生の Markdown 文字列**として保存されるため、いつでも取り出せます（ロックインを避ける設計です）。
-- バックアップは **設定 → バックアップ → 「バックアップを作成（.db）」** から行ってください。**DB ファイルを手でコピーするのは勧めません**（WAL モードのため、直近の記録が別ファイルに残っていて取りこぼします）。詳しくは [INSTALL.md](./INSTALL.md)。
-- ⚠️ DB ファイルを Dropbox / iCloud 等の同期フォルダに**そのまま**置くと、同じ理由で破損することがあります。同期フォルダにはアプリが書き出した写しを置いてください。
+- Everything is stored in a SQLite file on your machine and is never transmitted. With AI access turned on, rapore itself still sends nothing, but whatever your AI reads goes to that AI's provider. See **[PRIVACY.md](./PRIVACY.md)**.
+- Session notes and profile fields are stored as **plain Markdown strings**, so you can always get them out. This is deliberate — we don't want to lock your data in.
+- To back up, use **Settings → Backup → "Create a backup (.db)"**. **Copying the database file by hand is not recommended** — WAL mode means your most recent sessions may live in a separate file and would be missed. See [INSTALL.md](./INSTALL.md).
+- ⚠️ Putting the database file **directly** into a Dropbox / iCloud / OneDrive folder can corrupt it for the same reason. Put a copy written by the app there instead.
 
-## バグ報告・要望
+## Bugs and requests
 
-このリポジトリの [Issues](../../issues) へお願いします。
+Please open an [Issue](../../issues).
 
-## このリポジトリについて
+## About this repository
 
-**このリポジトリは配布専用です。ソースコードは含まれていません。** rapore はクローズドソースのソフトウェアであり、ソースコードは公開していません。ここに置いてあるのはビルド済みのインストーラとドキュメントだけです。
+**This repository is for distribution only. It does not contain source code.** rapore is closed-source software. What you'll find here is the built installers and this documentation.
 
-- 使用許諾: [LICENSE-EULA.md](./LICENSE-EULA.md)
-- 利用している OSS の表示: [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md)
-- 変更履歴: [CHANGELOG.md](./CHANGELOG.md)
+- License: [LICENSE-EULA.md](./LICENSE-EULA.md)
+- Open-source components: [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md)
+- Release notes: [CHANGELOG.md](./CHANGELOG.md)

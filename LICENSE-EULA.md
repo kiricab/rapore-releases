@@ -1,76 +1,78 @@
-# rapore エンドユーザー使用許諾契約書
+# rapore End User Licence Agreement
 
-**日本語（正文）** | [English (reference translation)](./LICENSE-EULA.en.md)
+**English (reference translation)** | [日本語（正文）](./LICENSE-EULA.ja.md)
 
-最終更新: 2026-08-30
+Last updated: 2026-09-05
 
-本契約における「開発者」とは、GitHub アカウント **kiricab**（https://github.com/kiricab ）として本ソフトウェアを開発・提供する個人を指します。
+> **This is a reference translation.** The Japanese version is the operative text. If the two differ, [the Japanese version](./LICENSE-EULA.ja.md) governs (Article 13).
 
-開発者への連絡は、本ソフトウェアの配布リポジトリの [Issues](../../issues) で受け付けます。
+In this Agreement, "the Developer" means the individual who develops and distributes this software as the GitHub account **kiricab** (https://github.com/kiricab ).
 
-本エンドユーザー使用許諾契約書（以下「本契約」）は、開発者とお客様との間で、デスクトップアプリケーション「rapore」（関連ドキュメント、アップデート版を含み、以下「本ソフトウェア」）の使用について定めるものです。本ソフトウェアをインストールまたは使用した時点で、お客様は本契約に同意したものとみなされます。同意されない場合は、本ソフトウェアをインストールまたは使用しないでください。
+You can reach the Developer through [Issues](../../issues) on this distribution repository.
 
-## 第1条（使用許諾）
+This End User Licence Agreement ("this Agreement") is between the Developer and you, and governs your use of the desktop application "rapore" (including its documentation and any updates, "the Software"). By installing or using the Software, you agree to this Agreement. If you do not agree, do not install or use the Software.
 
-開発者は、お客様に対し、本契約の条件に従い、本ソフトウェアを**個人的または社内的な業務目的**で使用する、非独占的かつ譲渡不能な権利を許諾します。お客様が所有または管理する台数の端末にインストールできます。
+## Article 1 (Licence)
 
-## 第2条（権利の帰属）
+Subject to this Agreement, the Developer grants you a non-exclusive, non-transferable right to use the Software **for personal or internal business purposes**. You may install it on as many devices as you own or control.
 
-本ソフトウェアは**販売されるものではなく、使用が許諾されるもの**です。本ソフトウェアに関する著作権その他一切の知的財産権は開発者に帰属します。本契約により明示的に許諾されていない権利は、すべて開発者に留保されます。
+## Article 2 (Ownership)
 
-なお、**お客様が本ソフトウェアを用いて作成・入力したデータ（1on1 の記録、メンバー情報等）の権利はお客様に帰属します**。開発者はこれらに対していかなる権利も主張しません。
+The Software is **licensed, not sold**. All copyright and other intellectual property rights in the Software belong to the Developer. All rights not expressly granted here are reserved.
 
-## 第3条（禁止事項）
+That said, **the data you create with the Software (1-on-1 notes, member information, and so on) belongs to you.** The Developer claims no rights over it.
 
-お客様は、次の行為を行ってはなりません。
+## Article 3 (Restrictions)
 
-1. 本ソフトウェアの複製物を第三者に頒布、販売、貸与、再使用許諾すること
-2. 本ソフトウェアを改変し、または二次的著作物を作成すること
-3. 本ソフトウェアをリバースエンジニアリング、逆コンパイル、逆アセンブルすること（ただし、適用される法令によりこれらの行為が明示的に認められている範囲を除きます）
-4. 本ソフトウェアに含まれる著作権表示その他の権利表示を除去または改変すること
-5. 本ソフトウェアの技術的保護手段またはライセンス確認の仕組みを回避すること
+You may not:
 
-## 第4条（お客様のデータと責任）
+1. distribute, sell, lend, or sublicense copies of the Software to third parties;
+2. modify the Software or create derivative works from it;
+3. reverse engineer, decompile, or disassemble the Software (except where applicable law expressly permits this);
+4. remove or alter any copyright or other proprietary notice in the Software;
+5. circumvent any technical protection or licence-verification mechanism in the Software.
 
-1. 本ソフトウェアは、お客様の端末内にのみデータを保存します。開発者はお客様のデータにアクセスできず、これを保持しません。
-2. **データのバックアップはお客様の責任で行ってください。** 開発者は、端末の故障、操作の誤り、その他の事由によるデータの消失について責任を負いません。
-3. お客様が本ソフトウェアに部下その他の第三者の個人情報を入力する場合、その取扱いは**お客様およびお客様の所属する組織の責任**において、適用される法令（個人情報の保護に関する法律等）および社内規程に従って行われるものとします。
-4. 本ソフトウェアの詳細な情報の取扱いについては [PRIVACY.md](./PRIVACY.md) をご参照ください。
+## Article 4 (Your data and your responsibilities)
 
-## 第5条（無保証）
+1. The Software stores data only on your own device. The Developer cannot access your data and does not hold it.
+2. **Backing up your data is your responsibility.** The Developer is not liable for data loss arising from device failure, mistaken operation, or any other cause.
+3. If you enter personal information about your reports or other third parties into the Software, handling that information is **your responsibility and that of your organisation**, under the applicable laws (including Japan's Act on the Protection of Personal Information) and your internal policies.
+4. For details of how the Software handles information, see [PRIVACY.md](./PRIVACY.md).
 
-本ソフトウェアは**現状有姿（AS IS）**、すなわち現に存在するそのままの状態で提供されます。開発者は、明示・黙示を問わず、商品性、特定目的への適合性、権利の非侵害性、正確性、および本ソフトウェアが中断なくエラーなく動作することについて、いかなる保証も行いません。
+## Article 5 (No warranty)
 
-## 第6条（責任の制限）
+The Software is provided **"AS IS"**. The Developer makes no warranty of any kind, express or implied, including merchantability, fitness for a particular purpose, non-infringement, accuracy, or that the Software will run uninterrupted or error-free.
 
-開発者は、本ソフトウェアの使用または使用不能から生じる一切の損害（データの消失、逸失利益、事業の中断、間接損害、特別損害、結果的損害を含みます）について、その可能性を事前に知らされていた場合であっても、責任を負いません。
+## Article 6 (Limitation of liability)
 
-適用される法令により責任の全部を排除できない場合、開発者の責任の総額は、お客様が当該本ソフトウェアについて実際に支払った金額を上限とします。無償で提供されたバージョンについては、上限は零円とします。
+The Developer is not liable for any damages arising from use of or inability to use the Software — including data loss, lost profits, business interruption, and indirect, special, or consequential damages — even if advised of the possibility of such damages.
 
-## 第7条（サードパーティ ソフトウェア）
+Where applicable law does not permit liability to be excluded entirely, the Developer's total liability is capped at the amount you actually paid for the Software. For versions provided free of charge, that cap is zero.
 
-本ソフトウェアには、それぞれのライセンス条項に基づくオープンソースソフトウェアが含まれています。該当部分については各ライセンス条項が本契約に優先して適用されます。詳細は [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md) をご参照ください。
+## Article 7 (Third-party software)
 
-## 第8条（アップデートとサポート）
+The Software includes open-source software distributed under its own licence terms. For those components, those terms apply and take precedence over this Agreement. See [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md).
 
-開発者は、本ソフトウェアのアップデートを提供する義務、および特定のサポートを提供する義務を負いません。アップデートが提供された場合、別途の条項が付されない限り本契約が適用されます。
+## Article 8 (Updates and support)
 
-## 第9条（契約の終了）
+The Developer is under no obligation to provide updates or any particular level of support. Where an update is provided, this Agreement applies to it unless separate terms accompany it.
 
-お客様が本契約に違反した場合、本契約に基づく使用許諾は自動的に終了します。終了後、お客様は本ソフトウェアの使用を中止し、そのすべての複製物を削除するものとします。お客様が作成したデータは、契約終了後もお客様に帰属し、引き続きお客様の端末に残ります。
+## Article 9 (Termination)
 
-## 第10条（準拠法）
+If you breach this Agreement, the licence granted here terminates automatically. On termination you must stop using the Software and delete all copies of it. Data you created remains yours and stays on your device.
 
-本契約は日本法に準拠し、日本法に従って解釈されます。管轄裁判所については本契約で特に定めず、法令の定めるところによります。
+## Article 10 (Governing law)
 
-## 第11条（本契約の変更）
+This Agreement is governed by, and construed in accordance with, the laws of Japan. This Agreement does not designate a court of jurisdiction; jurisdiction is determined by the applicable law.
 
-開発者は本契約を変更することがあります。変更後の条項は、変更後に提供されるバージョンの本ソフトウェアに適用されます。変更は [CHANGELOG.md](./CHANGELOG.md) に記載します。
+## Article 11 (Changes to this Agreement)
 
-## 第12条（有償版について）
+The Developer may change this Agreement. Changed terms apply to versions of the Software provided after the change. Changes are noted in [CHANGELOG.md](./CHANGELOG.md).
 
-本バージョンの本ソフトウェアは無償で提供されています。将来、有償の機能または有償版を提供する場合は、特定商取引法に基づく表示その他の必要な表示を別途行います。
+## Article 12 (Paid versions)
 
-## 第13条（正文）
+This version of the Software is provided free of charge. If paid features or a paid version are offered in future, the disclosures required under Japan's Act on Specified Commercial Transactions and any other required disclosures will be made separately at that time.
 
-本契約は**日本語を正文**とします。英語その他の言語による版は参考のための翻訳であり、内容に相違がある場合は日本語版が優先します。
+## Article 13 (Governing language)
+
+**The Japanese version of this Agreement is the operative text.** Versions in English or any other language are reference translations; in case of any discrepancy, [the Japanese version](./LICENSE-EULA.ja.md) prevails.
